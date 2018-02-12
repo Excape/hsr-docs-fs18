@@ -14,6 +14,7 @@ pages:
         - Index: 'clou/index.md'
     - Compilerbau:
         - Index: 'combau/index.md'
+        - Syntax: 'combau/syntax.md'
     - Deep Learning:
         - Index: 'dl/index.md'
 
@@ -31,7 +32,7 @@ markdown_extensions:
 
 extra:
     palette:
-        primary: 'green'
+        primary: 'yellow'
         accent: 'amber'
     font:
         text: 'Roboto'
