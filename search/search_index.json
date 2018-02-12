@@ -1,0 +1,64 @@
+{
+    "docs": [
+        {
+            "location": "/", 
+            "text": "HSR Notizen\n\n\nSpring Semester 2018\n\n\n\n\nCloud Solutions\n\n\nCompilerbau\n\n\nDeep Learning\n\n\n\n\nLinks\n\n\n\n\nMathJax Syntax\n\n\nMkDocs User-Guide\n\n\nMarkdown Cheatsheet", 
+            "title": "Home"
+        }, 
+        {
+            "location": "/#hsr-notizen", 
+            "text": "", 
+            "title": "HSR Notizen"
+        }, 
+        {
+            "location": "/#spring-semester-2018", 
+            "text": "Cloud Solutions  Compilerbau  Deep Learning", 
+            "title": "Spring Semester 2018"
+        }, 
+        {
+            "location": "/#links", 
+            "text": "MathJax Syntax  MkDocs User-Guide  Markdown Cheatsheet", 
+            "title": "Links"
+        }, 
+        {
+            "location": "/playground/", 
+            "text": "Markdown Playground\n\n\nDies ist etwas normaler Text mit etwas \nkursiver\n schrift und etwas \nbold\n schrift\n\n\nDieser Text ist \nmarkiert\n, hier sind emojis: \n \n \n\n\n\n\n1\n2\nDies ist Text ein Text ein Text ein Text ein Text ein Text ein Text ein Text ein Text ein Text ein Text ein Text ein Text ein Text ein Text ein Text ein Text ein Text\nzweite Zeile\n\n\n\n\n\n\n1\n2\n3\n4\n5\n6\n  \npublic\n \nclass\n \nTestClass\n()\n \n{\n\n    \nint\n \nvar\n \n=\n \n1\n;\n\n\n    \npublic\n \nmethod\n()\n \n{\n\n\n      \nreturn\n \nvar\n;\n\n\n    \n}\n\n\n  \n}\n\n\n\n\n\n\n\n\n\n\n\n\n\n1\n\n\n2\n\n\n3\n\n\n\n\n\n\n\n\n\n\n1\n\n\netwas\n\n\nanderes\n\n\n\n\n\n\n2\n\n\nals\n\n\nhier\n\n\n\n\n\n\n\n\n\n\nNotiz\n\n\nTest Notiz mit etwas Text drin\n\n\n\n\nNote\nKlapp mich auf!\n\n\nDanger\n\n\nGefahr!\n\n\n\n\n\n\nWarning\n\n\nWarnung!\n\n\n\n\n\n\nSummary\n\n\nEine Zusammenfassung\n\n\n\n\n\n\nInfo\n\n\nEine Information\n\n\n\n\n\n\nTip\n\n\nEin Tip\n\n\n\n\n\n\nQuestion\n\n\nEine Frage\n\n\n\n\n\n\nBug\n\n\nEin Bug\n\n\n\n\n\n\nQuote\n\n\nEin Zitat\n\n\n\n\nInline Math: \n x_i^2 * \\frac{(n^2 * n) - 1}{\\Omega} \n\n\n\n\nDisplay Math:\n\n\\sum_{i=0}^n i^2\n\n\n\n\nGruppen mit \n{}\n: \n{10}^5\n\n\n\n\n\n\nA \\rightarrow B \n\n\n\\lim_{x\\to \\infty} \\sin x", 
+            "title": "Playground"
+        }, 
+        {
+            "location": "/playground/#markdown-playground", 
+            "text": "Dies ist etwas normaler Text mit etwas  kursiver  schrift und etwas  bold  schrift  Dieser Text ist  markiert , hier sind emojis:        1\n2 Dies ist Text ein Text ein Text ein Text ein Text ein Text ein Text ein Text ein Text ein Text ein Text ein Text ein Text ein Text ein Text ein Text ein Text ein Text\nzweite Zeile   1\n2\n3\n4\n5\n6    public   class   TestClass ()   { \n     int   var   =   1 ;       public   method ()   {         return   var ;       }     }       1  2  3      1  etwas  anderes    2  als  hier      Notiz  Test Notiz mit etwas Text drin   Note Klapp mich auf!  Danger  Gefahr!    Warning  Warnung!    Summary  Eine Zusammenfassung    Info  Eine Information    Tip  Ein Tip    Question  Eine Frage    Bug  Ein Bug    Quote  Ein Zitat   Inline Math:   x_i^2 * \\frac{(n^2 * n) - 1}{\\Omega}    Display Math: \\sum_{i=0}^n i^2   Gruppen mit  {} :  {10}^5    A \\rightarrow B   \\lim_{x\\to \\infty} \\sin x", 
+            "title": "Markdown Playground"
+        }, 
+        {
+            "location": "/clou/", 
+            "text": "Cloud Solutions", 
+            "title": "Index"
+        }, 
+        {
+            "location": "/clou/#cloud-solutions", 
+            "text": "", 
+            "title": "Cloud Solutions"
+        }, 
+        {
+            "location": "/combau/", 
+            "text": "Compilerbau", 
+            "title": "Index"
+        }, 
+        {
+            "location": "/combau/#compilerbau", 
+            "text": "", 
+            "title": "Compilerbau"
+        }, 
+        {
+            "location": "/dl/", 
+            "text": "Deep Learning", 
+            "title": "Index"
+        }, 
+        {
+            "location": "/dl/#deep-learning", 
+            "text": "", 
+            "title": "Deep Learning"
+        }
+    ]
+}
