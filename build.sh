@@ -2,9 +2,9 @@
 set -e # exit with nonzero exit code if anything fails
 
 # add ssh key
-chmod 600 ssh-key
+chmod 600 deploy_rsa
 eval `ssh-agent -s`
-ssh-add ssh-key
+ssh-add deploy_rsa
 
 #Build with mkdocs into ./site
 mkdocs build --clean
