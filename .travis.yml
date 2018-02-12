@@ -1,6 +1,6 @@
 before_install:
-- openssl aes-256-cbc -K $encrypted_0064ee71e13a_key -iv $encrypted_0064ee71e13a_iv
-  -in ssh-key.enc -out ssh-key -d
+- openssl aes-256-cbc -K $encrypted_d3a9a679062d_key -iv $encrypted_d3a9a679062d_iv
+  -in deploy_rsa.enc -out deploy_rsa -d
 - sudo pip install -r requirements.txt
 script: bash ./build.sh
 sudo: required
