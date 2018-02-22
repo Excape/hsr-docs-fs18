@@ -41,6 +41,21 @@
             "title": "Cloud Solutions"
         }, 
         {
+            "location": "/clou/introduction/", 
+            "text": "Introduction\n\n\nAnforderung an Cloud Provider\n\n\n\n\nAvailability\n\n\nOn Boarding (einfach zu bedienen)\n\n\nVerschiedene Interfaces (z.B. API, Browser)\n\n\nOn Demand: Nicht auf Installation warten m\u00fcssen\n\n\nSecurity-Zusicherungen\n\n\nScalability\n\n\nTooling (z.B. Monitoring)\n\n\nModular\n\n\nKein Vendor lock-in\n\n\n\n\nMeasurable: z.B. transparente Kosten\n\n\n\n\n\n\nNIST-Standard ist weniger spezifisch als \"OSSM\"\n\n\n\n\nz.B. nichts \u00fcber Monitoring, API-Access, ...", 
+            "title": "Introduction"
+        }, 
+        {
+            "location": "/clou/introduction/#introduction", 
+            "text": "", 
+            "title": "Introduction"
+        }, 
+        {
+            "location": "/clou/introduction/#anforderung-an-cloud-provider", 
+            "text": "Availability  On Boarding (einfach zu bedienen)  Verschiedene Interfaces (z.B. API, Browser)  On Demand: Nicht auf Installation warten m\u00fcssen  Security-Zusicherungen  Scalability  Tooling (z.B. Monitoring)  Modular  Kein Vendor lock-in   Measurable: z.B. transparente Kosten    NIST-Standard ist weniger spezifisch als \"OSSM\"   z.B. nichts \u00fcber Monitoring, API-Access, ...", 
+            "title": "Anforderung an Cloud Provider"
+        }, 
+        {
             "location": "/combau/", 
             "text": "Compilerbau", 
             "title": "Index"
@@ -74,6 +89,41 @@
             "location": "/dl/#deep-learning", 
             "text": "", 
             "title": "Deep Learning"
+        }, 
+        {
+            "location": "/dl/linear_algebra/", 
+            "text": "Linear Algebra\n\n\n\n\nIndices in Matrix: First index is row (\ni\n: row, \nj\n: column)\n\n\nA 3D (or higher-dimensional) array is a \ntensor\n\n\nIn DL, we add scalars to matrices (not in linearl algebra): \nD_{i,j} = a \\cdot B_{i,j} + c\n\n\n\n\n\n\nMatrix Multiplication\n\n\n\n\nDimensions must be (q,p) = (q,k)(k,p)\n\n\nk\n-sized vectors are multiplied together\n\n\n\n\n\n\nHadamard Prodcut\n: Element-wise product, dimensions must be the same\n\n\nMatrix multiplication is associative and distributive, but \nnot commutative\n\n\n\n\nAB \\neq BA\n\n\n\n\n\n\n\n\n\n\nInverse Matrix\n\n\n\n\nMatrix which when multiplied with A will result in the Identity Matrix\n\n\nUsed for solving equations\n\n\n\n\nAx = b \\Rightarrow x = A^{-1}b\n\n\n\n\nNumerically not ideal\n\n\n\n\n\n\nEquation system could also have no or infinite solutions\n\n\nNo \"multipled solutions\", because an infinite number of solutions can be built with two of them\n\n\n\n\n\n\nFor \nA^{-1}\n to exist, we need \nm = n\n and all columns must be \nlinearly independent\n\n\nmeaning no vector can be created by scaling two others\n\n\n\n\n\n\n\n\nNorms\n\n\n\n\nMeasure to measure the length of a vector\n\n\nMost \"famous\": Euclidian norm (\"pythagoras\")\n\n\nThe \nsquared\n euclidian norm can be calculates as \nx^Tx\n\n\n\n\n\n\nL^1\n-norm: Add up every absolute value of the vector\n\n\nBetter for values closer to zero\n\n\n\n\n\n\n\n\nL^0\n-norm: Count the number of non-zero entries\n\n\nnot a mathematical norm\n, properties of a norm don't hold\n\n\n\n\n\n\n\n\nL^\\infty\n is just the max\n\n\nFrobenius norm: Square every entry of a Matrix and square the result\n\n\n\n\nSpecial Matrices\n\n\n\n\nDiagonal Matrix: Everything 0 except diagonal\n\n\ndiag(v)\n: \nv\n is the vector formed by the diagonal\n\n\ndiag(v)^-1\n = `diag([1/v1, ... 1/vn])\n\n\nSymmetric matrix: \nA = A^{-1}\n\n\n\n\northogonal matrix: rows and columns are mutually orthonormal\n\n\ntwo vectors orthonomal =\n dot product = 0\n\n\n\n\n\n\n\n\nEigendecomposition\n\n\n\n\n\n\nAv = \\lambda v\n\n\n\n\nWe need to find Eigenvector \nv\n and Eigenvalue (\\lambda)\n\n\nWe usually scale the Eigenvector to have length 1 (euclidian norm)\n\n\n\n\nA = V \\text{diag}(\\lambda)V^{-1}", 
+            "title": "Linear Algebra"
+        }, 
+        {
+            "location": "/dl/linear_algebra/#linear-algebra", 
+            "text": "Indices in Matrix: First index is row ( i : row,  j : column)  A 3D (or higher-dimensional) array is a  tensor  In DL, we add scalars to matrices (not in linearl algebra):  D_{i,j} = a \\cdot B_{i,j} + c", 
+            "title": "Linear Algebra"
+        }, 
+        {
+            "location": "/dl/linear_algebra/#matrix-multiplication", 
+            "text": "Dimensions must be (q,p) = (q,k)(k,p)  k -sized vectors are multiplied together    Hadamard Prodcut : Element-wise product, dimensions must be the same  Matrix multiplication is associative and distributive, but  not commutative   AB \\neq BA", 
+            "title": "Matrix Multiplication"
+        }, 
+        {
+            "location": "/dl/linear_algebra/#inverse-matrix", 
+            "text": "Matrix which when multiplied with A will result in the Identity Matrix  Used for solving equations   Ax = b \\Rightarrow x = A^{-1}b   Numerically not ideal    Equation system could also have no or infinite solutions  No \"multipled solutions\", because an infinite number of solutions can be built with two of them    For  A^{-1}  to exist, we need  m = n  and all columns must be  linearly independent  meaning no vector can be created by scaling two others", 
+            "title": "Inverse Matrix"
+        }, 
+        {
+            "location": "/dl/linear_algebra/#norms", 
+            "text": "Measure to measure the length of a vector  Most \"famous\": Euclidian norm (\"pythagoras\")  The  squared  euclidian norm can be calculates as  x^Tx    L^1 -norm: Add up every absolute value of the vector  Better for values closer to zero     L^0 -norm: Count the number of non-zero entries  not a mathematical norm , properties of a norm don't hold     L^\\infty  is just the max  Frobenius norm: Square every entry of a Matrix and square the result", 
+            "title": "Norms"
+        }, 
+        {
+            "location": "/dl/linear_algebra/#special-matrices", 
+            "text": "Diagonal Matrix: Everything 0 except diagonal  diag(v) :  v  is the vector formed by the diagonal  diag(v)^-1  = `diag([1/v1, ... 1/vn])  Symmetric matrix:  A = A^{-1}   orthogonal matrix: rows and columns are mutually orthonormal  two vectors orthonomal =  dot product = 0", 
+            "title": "Special Matrices"
+        }, 
+        {
+            "location": "/dl/linear_algebra/#eigendecomposition", 
+            "text": "Av = \\lambda v   We need to find Eigenvector  v  and Eigenvalue (\\lambda)  We usually scale the Eigenvector to have length 1 (euclidian norm)   A = V \\text{diag}(\\lambda)V^{-1}", 
+            "title": "Eigendecomposition"
         }
     ]
 }
