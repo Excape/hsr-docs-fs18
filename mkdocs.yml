@@ -12,11 +12,13 @@ pages:
     - Playground: 'playground.md'
     - Cloud Solutions:
         - Index: 'clou/index.md'
+        - Introduction: 'clou/introduction.md'
     - Compilerbau:
         - Index: 'combau/index.md'
         - Syntax: 'combau/syntax.md'
     - Deep Learning:
         - Index: 'dl/index.md'
+        - Linear Algebra: 'dl/linear_algebra.md'
 
 markdown_extensions:
   - toc(permalink=true)
