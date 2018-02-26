@@ -4,7 +4,7 @@
     
     <url>
      <loc>https://doc.robinsuter.ch/</loc>
-     <lastmod>2018-02-22</lastmod>
+     <lastmod>2018-02-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -12,7 +12,7 @@
     
     <url>
      <loc>https://doc.robinsuter.ch/playground/</loc>
-     <lastmod>2018-02-22</lastmod>
+     <lastmod>2018-02-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -21,13 +21,13 @@
         
     <url>
      <loc>https://doc.robinsuter.ch/clou/</loc>
-     <lastmod>2018-02-22</lastmod>
+     <lastmod>2018-02-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>https://doc.robinsuter.ch/clou/introduction/</loc>
-     <lastmod>2018-02-22</lastmod>
+     <lastmod>2018-02-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -37,13 +37,19 @@
         
     <url>
      <loc>https://doc.robinsuter.ch/combau/</loc>
-     <lastmod>2018-02-22</lastmod>
+     <lastmod>2018-02-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>https://doc.robinsuter.ch/combau/syntax/</loc>
-     <lastmod>2018-02-22</lastmod>
+     <lastmod>2018-02-26</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>https://doc.robinsuter.ch/combau/lexer/</loc>
+     <lastmod>2018-02-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -53,13 +59,13 @@
         
     <url>
      <loc>https://doc.robinsuter.ch/dl/</loc>
-     <lastmod>2018-02-22</lastmod>
+     <lastmod>2018-02-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>https://doc.robinsuter.ch/dl/linear_algebra/</loc>
-     <lastmod>2018-02-22</lastmod>
+     <lastmod>2018-02-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
         

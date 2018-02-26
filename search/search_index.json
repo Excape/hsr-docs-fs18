@@ -81,6 +81,61 @@
             "title": "Rappi# Syntax"
         }, 
         {
+            "location": "/combau/lexer/", 
+            "text": "Lexer\n\n\nTrailing else problem\n\n\n\n\nNicht eindeutige Syntax\n\n\nJava umgeht das mit separat definiertem \"StatementNoShortIf\"\n\n\n\n\nLexikalische Analyse\n\n\n\n\nAnalyse von Terminalsymbolen zu Tokens\n\n\nToken = \"Terminalsymbol\"\n\n\n\n\n\n\nVon Charakter-Stream zu Token-Stream\n\n\nFasst mehrere Textzeichen zusammen zu Tokens\n\n\nEliminiert Whitespaces und Code-Kommentare\n\n\nWhitespace ist aber relevant, um Tokens zu trennen\n\n\nKommentare k\u00f6nnen z.B. f\u00fcr Refactoring-Tools relevant sein\n\n\n\n\n\n\nMerkt Position von Tokens im Code f\u00fcr Fehlermeldung und Debugging\n\n\n\n\nNutzer f\u00fcr Parser\n\n\n\n\nParser arbeitet nur mit Tokens\n\n\nLookahead pro Symbol (nur n\u00e4chstes Symbol)\n\n\n\n\nTokens\n\n\n\n\nKeywords sind reservierte Begriffe\n\n\nInterpunktionen wie \n;\n, \n{\n, \n]\n etc.\n\n\nIdentifiers sind \"custom\" tokens wie Variablennamen (die keine keywords sein d\u00fcrfen)\n\n\nReservierte typennamen und Werte (true, false, ...) nicht als fixe Tokens scannen, sondern als Identifier\n\n\n\n\nRegul\u00e4re Sprachen\n\n\n\n\nScanner / Lexer versteht nur regul\u00e4re Sprachen\n\n\nin EBNF ohne Rekursion m\u00f6glich = regul\u00e4r\n\n\n= als eine EBNF-Regel formulierbar\n\n\n\n\n\n\n\u00ccnteger = Digit [ Integer ]\n ist rekursiv, kann aber regul\u00e4r formuliert werden\n\n\nals \nInteger = Digit { Digit }.\n\n\nSyntax \u00e4quivalent\n\n\n\n\n\n\nScanner kann regul\u00e4re Sprachen, Parser kontextfreie Sprachen\n\n\nLexer ist endlicher Automat\n\n\n\n\n\n\nkontextsensitive Sprache wird begrenzt durch Semantic Checker abgedeckt\n\n\n\n\nMaximum Munch\n\n\n\n\nScanner absorbiert immer m\u00f6glichst viel\n\n\na.k.a. Regex \"greedy evaluation\"\n\n\n\n\n\n\nH\u00f6rt bei whitespace auf\n\n\n\n\nKommentare\n\n\n\n\nNicht schachtelbar -\n regul\u00e4re Ausdr\u00fccke\n\n\n\n\nTips f\u00fcr Scanner\n\n\n\n\nOverflow in Integers?\n\n\nAchtung: Min-value ist 1 \"gr\u00f6sser\" als max value!\n\n\nim Lexer nicht aufl\u00f6sbar, 1 zu gross erlauben\n\n\n\n\n\n\nNegative Zahlen als fix Token \n-\n und Integer scannen\n\n\nString-Scanner:\n\n\nEscaping beachten\n\n\nNewline beachten, String terminiert?\n\n\n\n\n\n\nEin \n/\n kann ein Kommentar oder ein Divide-Tag sein\n\n\nZeile / Position mitf\u00fchren (Position alleine reicht)\n\n\n\n\nFehlerbehandlung\n\n\n\n\nError-Tokens zur\u00fcck liefern, damit nicht direkt beim ersten Fehler abgebrochen wird\n\n\nBraucht aber eine Korrektur", 
+            "title": "Lexer"
+        }, 
+        {
+            "location": "/combau/lexer/#lexer", 
+            "text": "", 
+            "title": "Lexer"
+        }, 
+        {
+            "location": "/combau/lexer/#trailing-else-problem", 
+            "text": "Nicht eindeutige Syntax  Java umgeht das mit separat definiertem \"StatementNoShortIf\"", 
+            "title": "Trailing else problem"
+        }, 
+        {
+            "location": "/combau/lexer/#lexikalische-analyse", 
+            "text": "Analyse von Terminalsymbolen zu Tokens  Token = \"Terminalsymbol\"    Von Charakter-Stream zu Token-Stream  Fasst mehrere Textzeichen zusammen zu Tokens  Eliminiert Whitespaces und Code-Kommentare  Whitespace ist aber relevant, um Tokens zu trennen  Kommentare k\u00f6nnen z.B. f\u00fcr Refactoring-Tools relevant sein    Merkt Position von Tokens im Code f\u00fcr Fehlermeldung und Debugging", 
+            "title": "Lexikalische Analyse"
+        }, 
+        {
+            "location": "/combau/lexer/#nutzer-fur-parser", 
+            "text": "Parser arbeitet nur mit Tokens  Lookahead pro Symbol (nur n\u00e4chstes Symbol)", 
+            "title": "Nutzer f\u00fcr Parser"
+        }, 
+        {
+            "location": "/combau/lexer/#tokens", 
+            "text": "Keywords sind reservierte Begriffe  Interpunktionen wie  ; ,  { ,  ]  etc.  Identifiers sind \"custom\" tokens wie Variablennamen (die keine keywords sein d\u00fcrfen)  Reservierte typennamen und Werte (true, false, ...) nicht als fixe Tokens scannen, sondern als Identifier", 
+            "title": "Tokens"
+        }, 
+        {
+            "location": "/combau/lexer/#regulare-sprachen", 
+            "text": "Scanner / Lexer versteht nur regul\u00e4re Sprachen  in EBNF ohne Rekursion m\u00f6glich = regul\u00e4r  = als eine EBNF-Regel formulierbar    \u00ccnteger = Digit [ Integer ]  ist rekursiv, kann aber regul\u00e4r formuliert werden  als  Integer = Digit { Digit }.  Syntax \u00e4quivalent    Scanner kann regul\u00e4re Sprachen, Parser kontextfreie Sprachen  Lexer ist endlicher Automat    kontextsensitive Sprache wird begrenzt durch Semantic Checker abgedeckt", 
+            "title": "Regul\u00e4re Sprachen"
+        }, 
+        {
+            "location": "/combau/lexer/#maximum-munch", 
+            "text": "Scanner absorbiert immer m\u00f6glichst viel  a.k.a. Regex \"greedy evaluation\"    H\u00f6rt bei whitespace auf", 
+            "title": "Maximum Munch"
+        }, 
+        {
+            "location": "/combau/lexer/#kommentare", 
+            "text": "Nicht schachtelbar -  regul\u00e4re Ausdr\u00fccke", 
+            "title": "Kommentare"
+        }, 
+        {
+            "location": "/combau/lexer/#tips-fur-scanner", 
+            "text": "Overflow in Integers?  Achtung: Min-value ist 1 \"gr\u00f6sser\" als max value!  im Lexer nicht aufl\u00f6sbar, 1 zu gross erlauben    Negative Zahlen als fix Token  -  und Integer scannen  String-Scanner:  Escaping beachten  Newline beachten, String terminiert?    Ein  /  kann ein Kommentar oder ein Divide-Tag sein  Zeile / Position mitf\u00fchren (Position alleine reicht)", 
+            "title": "Tips f\u00fcr Scanner"
+        }, 
+        {
+            "location": "/combau/lexer/#fehlerbehandlung", 
+            "text": "Error-Tokens zur\u00fcck liefern, damit nicht direkt beim ersten Fehler abgebrochen wird  Braucht aber eine Korrektur", 
+            "title": "Fehlerbehandlung"
+        }, 
+        {
             "location": "/dl/", 
             "text": "Deep Learning", 
             "title": "Index"
