@@ -16,6 +16,7 @@ pages:
     - Compilerbau:
         - Index: 'combau/index.md'
         - Syntax: 'combau/syntax.md'
+        - Lexer: 'combau/lexer.md'
     - Deep Learning:
         - Index: 'dl/index.md'
         - Linear Algebra: 'dl/linear_algebra.md'
