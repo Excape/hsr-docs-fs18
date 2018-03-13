@@ -17,6 +17,7 @@ pages:
         - Index: 'combau/index.md'
         - Syntax: 'combau/syntax.md'
         - Lexer: 'combau/lexer.md'
+        - Parser: 'combau/parser.md'
     - Deep Learning:
         - Index: 'dl/index.md'
         - Linear Algebra: 'dl/linear_algebra.md'
