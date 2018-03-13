@@ -13,7 +13,7 @@
         <meta name="description" content="HSR Study Documentation FS18">
       
       
-        <link rel="canonical" href="https://doc.robinsuter.ch/dl/linear_algebra/">
+        <link rel="canonical" href="https://doc.robinsuter.ch/combau/parser/">
       
       
         <meta name="author" content="Robin Suter">
@@ -42,7 +42,7 @@
     
     
       
-        <title>Linear Algebra - HSR Notizen FS18</title>
+        <title>Parser - HSR Notizen FS18</title>
       
     
     
@@ -97,7 +97,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search">
     <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
     
-      <a href="#linear-algebra" tabindex="1" class="md-skip">
+      <a href="#parser" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -123,7 +123,7 @@
                 HSR Notizen FS18
               </span>
               <span class="md-header-nav__topic">
-                Linear Algebra
+                Parser
               </span>
             
           
@@ -310,10 +310,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
     
     <label class="md-nav__link" for="nav-4">
       Compilerbau
@@ -321,80 +323,6 @@
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
       <label class="md-nav__title" for="nav-4">
         Compilerbau
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../combau/" title="Index" class="md-nav__link">
-      Index
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../combau/syntax/" title="Syntax" class="md-nav__link">
-      Syntax
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../combau/lexer/" title="Lexer" class="md-nav__link">
-      Lexer
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../combau/parser/" title="Parser" class="md-nav__link">
-      Parser
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-    
-      
-      
-      
-
-  
-
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" checked>
-    
-    <label class="md-nav__link" for="nav-5">
-      Deep Learning
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-5">
-        Deep Learning
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -415,6 +343,30 @@
           
           
 
+
+  <li class="md-nav__item">
+    <a href="../syntax/" title="Syntax" class="md-nav__link">
+      Syntax
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../lexer/" title="Lexer" class="md-nav__link">
+      Lexer
+    </a>
+  </li>
+
+        
+          
+          
+          
+
   
 
 
@@ -426,11 +378,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="toc">
-        Linear Algebra
+        Parser
       </label>
     
-    <a href="./" title="Linear Algebra" class="md-nav__link md-nav__link--active">
-      Linear Algebra
+    <a href="./" title="Parser" class="md-nav__link md-nav__link--active">
+      Parser
     </a>
     
       
@@ -444,36 +396,84 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#matrix-multiplication" title="Matrix Multiplication" class="md-nav__link">
-    Matrix Multiplication
+  <a href="#quiz-letzte-woche" title="Quiz letzte Woche" class="md-nav__link">
+    Quiz letzte Woche
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#inverse-matrix" title="Inverse Matrix" class="md-nav__link">
-    Inverse Matrix
+  <a href="#top-down-parser" title="Top-Down Parser" class="md-nav__link">
+    Top-Down Parser
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#norms" title="Norms" class="md-nav__link">
-    Norms
+  <a href="#syntax-baum" title="Syntax-Baum" class="md-nav__link">
+    Syntax-Baum
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#special-matrices" title="Special Matrices" class="md-nav__link">
-    Special Matrices
+  <a href="#top-down-vs-bottom-up" title="Top-Down vs. Bottom-Up" class="md-nav__link">
+    Top-Down vs. Bottom-Up
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#eigendecomposition" title="Eigendecomposition" class="md-nav__link">
-    Eigendecomposition
+  <a href="#recursive-decent" title="Recursive Decent" class="md-nav__link">
+    Recursive Decent
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tools-und-implementation" title="Tools und Implementation" class="md-nav__link">
+    Tools und Implementation
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#linksrekursion" title="Linksrekursion" class="md-nav__link">
+    Linksrekursion
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#syntaxbaum" title="Syntaxbaum" class="md-nav__link">
+    Syntaxbaum
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fehlerbehandlung" title="Fehlerbehandlung" class="md-nav__link">
+    Fehlerbehandlung
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#attributierte-grammatiken" title="Attributierte Grammatiken" class="md-nav__link">
+    Attributierte Grammatiken
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bottom-up-parser-lr-parser" title="Bottom-Up Parser (LR-Parser)" class="md-nav__link">
+    Bottom-Up Parser (LR-Parser)
   </a>
   
 </li>
@@ -486,6 +486,54 @@
   
 </nav>
     
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      Deep Learning
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        Deep Learning
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../dl/" title="Index" class="md-nav__link">
+      Index
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../dl/linear_algebra/" title="Linear Algebra" class="md-nav__link">
+      Linear Algebra
+    </a>
   </li>
 
         
@@ -515,36 +563,84 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#matrix-multiplication" title="Matrix Multiplication" class="md-nav__link">
-    Matrix Multiplication
+  <a href="#quiz-letzte-woche" title="Quiz letzte Woche" class="md-nav__link">
+    Quiz letzte Woche
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#inverse-matrix" title="Inverse Matrix" class="md-nav__link">
-    Inverse Matrix
+  <a href="#top-down-parser" title="Top-Down Parser" class="md-nav__link">
+    Top-Down Parser
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#norms" title="Norms" class="md-nav__link">
-    Norms
+  <a href="#syntax-baum" title="Syntax-Baum" class="md-nav__link">
+    Syntax-Baum
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#special-matrices" title="Special Matrices" class="md-nav__link">
-    Special Matrices
+  <a href="#top-down-vs-bottom-up" title="Top-Down vs. Bottom-Up" class="md-nav__link">
+    Top-Down vs. Bottom-Up
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#eigendecomposition" title="Eigendecomposition" class="md-nav__link">
-    Eigendecomposition
+  <a href="#recursive-decent" title="Recursive Decent" class="md-nav__link">
+    Recursive Decent
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tools-und-implementation" title="Tools und Implementation" class="md-nav__link">
+    Tools und Implementation
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#linksrekursion" title="Linksrekursion" class="md-nav__link">
+    Linksrekursion
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#syntaxbaum" title="Syntaxbaum" class="md-nav__link">
+    Syntaxbaum
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fehlerbehandlung" title="Fehlerbehandlung" class="md-nav__link">
+    Fehlerbehandlung
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#attributierte-grammatiken" title="Attributierte Grammatiken" class="md-nav__link">
+    Attributierte Grammatiken
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bottom-up-parser-lr-parser" title="Bottom-Up Parser (LR-Parser)" class="md-nav__link">
+    Bottom-Up Parser (LR-Parser)
   </a>
   
 </li>
@@ -565,90 +661,133 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/Excape/hsr-docs-fs18/edit/master/docs/dl/linear_algebra.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/Excape/hsr-docs-fs18/edit/master/docs/combau/parser.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="linear-algebra">Linear Algebra<a class="headerlink" href="#linear-algebra" title="Permanent link">&para;</a></h1>
+                <h1 id="parser">Parser<a class="headerlink" href="#parser" title="Permanent link">&para;</a></h1>
+<h2 id="quiz-letzte-woche">Quiz letzte Woche<a class="headerlink" href="#quiz-letzte-woche" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Indices in Matrix: First index is row (<em>i</em>: row, <em>j</em>: column)</li>
-<li>A 3D (or higher-dimensional) array is a <strong>tensor</strong></li>
-<li>In DL, we add scalars to matrices (not in linearl algebra): <script type="math/tex">D_{i,j} = a \cdot B_{i,j} + c</script>
+<li>Lexer liefert nur den regulären Anteil<ul>
+<li>Keine rekursive Syntax-Elemente, bzw. Elemente, die _nur rekursiv ausdruckbar sind</li>
+</ul>
 </li>
 </ul>
-<h2 id="matrix-multiplication">Matrix Multiplication<a class="headerlink" href="#matrix-multiplication" title="Permanent link">&para;</a></h2>
+<h2 id="top-down-parser">Top-Down Parser<a class="headerlink" href="#top-down-parser" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Dimensions must be (q,p) = (q,k)(k,p)<ul>
-<li><code>k</code>-sized vectors are multiplied together</li>
+<li>Input: Terminalsymbole, Output: Syntaxbaum</li>
+<li>Kann nur kontextfreie Sprache<ul>
+<li>z.B. nicht, ob Variable deklariert ist, oder Parameter auf Argumente passen, type checking</li>
+<li>Diese sind kontextabhängig</li>
 </ul>
 </li>
-<li><em>Hadamard Prodcut</em>: Element-wise product, dimensions must be the same</li>
-<li>Matrix multiplication is associative and distributive, but <strong>not commutative</strong><ul>
-<li>
-<script type="math/tex">AB \neq BA</script>
-</li>
+<li>Der Parser muss eine Ableitung der Syntaxregeln finden, um einen gegebenen Input herzuleiten</li>
+<li>Quasi eine Ableitung rückwärts, von Token zu einer Regel</li>
+<li>Diese Woche: Syntax-Check, nächste Woche Syntaxbaum</li>
 </ul>
-</li>
-</ul>
-<h2 id="inverse-matrix">Inverse Matrix<a class="headerlink" href="#inverse-matrix" title="Permanent link">&para;</a></h2>
+<h2 id="syntax-baum">Syntax-Baum<a class="headerlink" href="#syntax-baum" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Matrix which when multiplied with A will result in the Identity Matrix</li>
-<li>Used for solving equations<ul>
-<li>
-<script type="math/tex">Ax = b \Rightarrow x = A^{-1}b</script>
-</li>
-<li>Numerically not ideal</li>
+<li>Konkreter Syntax-Baum (Parse Tree) befolgt die Syntax genau</li>
+<li>Abstract Syntax-Tree (AST) kann unwichtige Details auslassen<ul>
+<li>z.B. Klammern weg lassen</li>
 </ul>
 </li>
-<li>Equation system could also have no or infinite solutions<ul>
-<li>No "multipled solutions", because an infinite number of solutions can be built with two of them</li>
+<li>AST kann nicht automatisch erzeugt werden, "nach Gusto" des Entwicklers</li>
+<li>Selber implementierte Parser können direkt AST liefern</li>
 </ul>
-</li>
-<li>For <script type="math/tex">A^{-1}</script> to exist, we need <script type="math/tex">m = n</script> and all columns must be <em>linearly independent</em><ul>
-<li>meaning no vector can be created by scaling two others</li>
-</ul>
-</li>
-</ul>
-<h2 id="norms">Norms<a class="headerlink" href="#norms" title="Permanent link">&para;</a></h2>
+<h2 id="top-down-vs-bottom-up">Top-Down vs. Bottom-Up<a class="headerlink" href="#top-down-vs-bottom-up" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Measure to measure the length of a vector</li>
-<li>Most "famous": Euclidian norm ("pythagoras")</li>
-<li>The <em>squared</em> euclidian norm can be calculates as <script type="math/tex">x^Tx</script>
-</li>
-<li>
-<script type="math/tex">L^1</script>-norm: Add up every absolute value of the vector<ul>
-<li>Better for values closer to zero</li>
+<li>Top-Down: Zuerst "linke Seite" der Regel anwenden, bis Eingabetext rauskommt<ul>
+<li>Immer von links her auflösen</li>
 </ul>
 </li>
-<li>
-<script type="math/tex">L^0</script>-norm: Count the number of non-zero entries<ul>
-<li><strong>not a mathematical norm</strong>, properties of a norm don't hold</li>
+<li>Bottom-Up: Mit Eingabetext beginnen, und Regeln darauf anwenden, bis man zum "Startsymbol" kommt<ul>
+<li>Umgekehrt zum Top-Down Parsing</li>
 </ul>
 </li>
-<li>
-<script type="math/tex">L^\infty</script> is just the max</li>
-<li>Frobenius norm: Square every entry of a Matrix and square the result</li>
 </ul>
-<h2 id="special-matrices">Special Matrices<a class="headerlink" href="#special-matrices" title="Permanent link">&para;</a></h2>
+<h2 id="recursive-decent">Recursive Decent<a class="headerlink" href="#recursive-decent" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Diagonal Matrix: Everything 0 except diagonal</li>
-<li><code>diag(v)</code>: <code>v</code> is the vector formed by the diagonal</li>
-<li><code>diag(v)^-1</code> = `diag([1/v1, ... 1/vn])</li>
-<li>Symmetric matrix: <script type="math/tex">A = A^{-1}</script>
-</li>
-<li>orthogonal matrix: rows and columns are mutually orthonormal<ul>
-<li>two vectors orthonomal =&gt; dot product = 0</li>
+<li>Wir nutzen den Stack der Methodenaufrufe als "Push-Down Automat"</li>
+<li>Pro Nicht-terminalsymbol eine Methode</li>
+<li>Wenn ein Nicht-Terminalsymbol in Syntax (rechte Seite) vorkommt, wird die entsprechende Methode aufgerufen</li>
+<li>Methoden können sich gegenseitig rekursiv aufrufen</li>
+<li>Gibt keine Entscheidungsprobleme bei Top-Down (zielorientiert)<ul>
+<li>Anderer Ansatz, wenn das nicht geht: Produktion ausprobieren und bei Fehler "backtracken" (exponentielle Laufzeit)</li>
 </ul>
 </li>
 </ul>
-<h2 id="eigendecomposition">Eigendecomposition<a class="headerlink" href="#eigendecomposition" title="Permanent link">&para;</a></h2>
+<h2 id="tools-und-implementation">Tools und Implementation<a class="headerlink" href="#tools-und-implementation" title="Permanent link">&para;</a></h2>
 <ul>
-<li>
-<script type="math/tex">Av = \lambda v</script>
+<li>One Token lookahead reicht aus</li>
+<li>Momentan geben die Methoden <code>void</code> zurück, wo später ein Syntaxbaum erstellt wird<ul>
+<li>Nur Syntax-Check</li>
+</ul>
 </li>
-<li>We need to find Eigenvector <script type="math/tex">v</script> and Eigenvalue (\lambda)</li>
-<li>We usually scale the Eigenvector to have length 1 (euclidian norm)</li>
-<li>
-<script type="math/tex">A = V \text{diag}(\lambda)V^{-1}</script>
+<li>Für nicht-terminal-Symbole braucht es z.T. ein weiteres Lookahead<ul>
+<li>Mögliche Terminalsymbole erfassen, die in einem nicht-terminal-symbol als erstes vorkommen können: <code>FIRST</code> Set</li>
+<li>FIRST-Sets können Vereinigungen von "untergeordneten" NT-Symbolen haben</li>
+<li>Wenn zwei NT-Symbole nicht-disjunkte FIRST-Mengen haben, reicht ein One-Token-Lookahead nicht mehr aus, da nicht entschieden werden kann<ul>
+<li>Braucht weiteres Lookahead, dann irgendwann drei, etc.</li>
+<li>Stattdessen Syntax "umformen" für Parser</li>
+<li>Für beide Regeln eine eigene Regeln erfassen und das Gemeinsame zusammen ziehen</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="linksrekursion">Linksrekursion<a class="headerlink" href="#linksrekursion" title="Permanent link">&para;</a></h3>
+<ul>
+<li>z.B. <code>Sequence = Sequence [ Statement ]</code></li>
+<li>Gibt bei Implementation bei Recursive Decent endlose Rekursion</li>
+<li>Bottom-Up Parser können damit umgehen</li>
+<li>Umschreiben nach <code>Sequence = { Statement }</code></li>
+</ul>
+<h2 id="syntaxbaum">Syntaxbaum<a class="headerlink" href="#syntaxbaum" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Statement-Block ist ein Spezialfall von Statement, in anderen Sprachen ist ein Statement-Block auch ein Statement</li>
+<li>Achten auf Assoziativität bei Expressions<ul>
+<li></li>
+</ul>
+</li>
+</ul>
+<h2 id="fehlerbehandlung">Fehlerbehandlung<a class="headerlink" href="#fehlerbehandlung" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Nur häufige Fehler korrigieren</li>
+<li>Basiert immer auf Hypothese, es können leicht Folgefehler entstehen</li>
+<li>Andere Fehler wie inkompatible Typen, falsche Argumentliste, etc. werden im Semantic Checker behandelt</li>
+</ul>
+<h2 id="attributierte-grammatiken">Attributierte Grammatiken<a class="headerlink" href="#attributierte-grammatiken" title="Permanent link">&para;</a></h2>
+<ul>
+<li>EBNF-Grammatiken mit kontext-sensitiven Attributen ergänzen</li>
+<li>Semantische Checks oder Erzeugen des AST</li>
+<li><code>Write()</code> ist eine Aktion und gibt lediglich etwas auf die Konsole aus</li>
+<li>Ausgabe Folie 22: `1 2 - 3 4 - +<ul>
+<li>Postfix-Notation wie bei HP Taschenrechner</li>
+</ul>
+</li>
+<li>Die Aktionen werden immer zum Schluss "der Parse-Methode" ausgeführt</li>
+<li>Der Parser kann auch direkt statische Ausdrücke evaluieren</li>
+<li>Direkt Syntaxbaum erzeugen mit <code>new BinaryExpression(...)</code> etc. direkt im Attribut</li>
+<li>S-attributiert (synthetisiert): Attribute lesen nur Parameter von Teilregeln (rechte Seite)</li>
+<li>L-attributiert (Ererbt): Attribut kann auch "linke" Seite lesen</li>
+<li>Es kann alles in Grammatik beschrieben werden, in der Praxis ist dies aber unübersichtlich und kompliziert</li>
+</ul>
+<h2 id="bottom-up-parser-lr-parser">Bottom-Up Parser (LR-Parser)<a class="headerlink" href="#bottom-up-parser-lr-parser" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Ansatz: Tokenstream nehmen und "zusammenfalten" zu Syntaxbaum</li>
+<li>Nach jedem gelesenen Symbol prüfen, ob die Folge einer Regel entspricht<ul>
+<li>Wenn ja, "Reduce"</li>
+<li>Wenn nein, das nächste Zeichen auslesen (shift)</li>
+</ul>
+</li>
+<li>Am Schluss muss das Startsymbol übrig bleiben, sonst Syntaxfehler</li>
+<li>Es kann zu Entscheidungsschwierigkeiten kommen: "Shift-reduce" / "Reduce-Reduce" Probleme<ul>
+<li>Grammatik anpassen oder "von Hand"</li>
+</ul>
+</li>
+<li>LR ist "mächtiger" als LL-Parser<ul>
+<li>z.B. Linksrekursion</li>
+</ul>
 </li>
 </ul>
                 
@@ -669,7 +808,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../" title="Index" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../lexer/" title="Lexer" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -678,11 +817,25 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Index
+                Lexer
               </span>
             </div>
           </a>
         
+        
+          <a href="../../dl/" title="Index" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Index
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
         
       </nav>
     </div>

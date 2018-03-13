@@ -136,6 +136,71 @@
             "title": "Fehlerbehandlung"
         }, 
         {
+            "location": "/combau/parser/", 
+            "text": "Parser\n\n\nQuiz letzte Woche\n\n\n\n\nLexer liefert nur den regul\u00e4ren Anteil\n\n\nKeine rekursive Syntax-Elemente, bzw. Elemente, die _nur rekursiv ausdruckbar sind\n\n\n\n\n\n\n\n\nTop-Down Parser\n\n\n\n\nInput: Terminalsymbole, Output: Syntaxbaum\n\n\nKann nur kontextfreie Sprache\n\n\nz.B. nicht, ob Variable deklariert ist, oder Parameter auf Argumente passen, type checking\n\n\nDiese sind kontextabh\u00e4ngig\n\n\n\n\n\n\nDer Parser muss eine Ableitung der Syntaxregeln finden, um einen gegebenen Input herzuleiten\n\n\nQuasi eine Ableitung r\u00fcckw\u00e4rts, von Token zu einer Regel\n\n\nDiese Woche: Syntax-Check, n\u00e4chste Woche Syntaxbaum\n\n\n\n\nSyntax-Baum\n\n\n\n\nKonkreter Syntax-Baum (Parse Tree) befolgt die Syntax genau\n\n\nAbstract Syntax-Tree (AST) kann unwichtige Details auslassen\n\n\nz.B. Klammern weg lassen\n\n\n\n\n\n\nAST kann nicht automatisch erzeugt werden, \"nach Gusto\" des Entwicklers\n\n\nSelber implementierte Parser k\u00f6nnen direkt AST liefern\n\n\n\n\nTop-Down vs. Bottom-Up\n\n\n\n\nTop-Down: Zuerst \"linke Seite\" der Regel anwenden, bis Eingabetext rauskommt\n\n\nImmer von links her aufl\u00f6sen\n\n\n\n\n\n\nBottom-Up: Mit Eingabetext beginnen, und Regeln darauf anwenden, bis man zum \"Startsymbol\" kommt\n\n\nUmgekehrt zum Top-Down Parsing\n\n\n\n\n\n\n\n\nRecursive Decent\n\n\n\n\nWir nutzen den Stack der Methodenaufrufe als \"Push-Down Automat\"\n\n\nPro Nicht-terminalsymbol eine Methode\n\n\nWenn ein Nicht-Terminalsymbol in Syntax (rechte Seite) vorkommt, wird die entsprechende Methode aufgerufen\n\n\nMethoden k\u00f6nnen sich gegenseitig rekursiv aufrufen\n\n\nGibt keine Entscheidungsprobleme bei Top-Down (zielorientiert)\n\n\nAnderer Ansatz, wenn das nicht geht: Produktion ausprobieren und bei Fehler \"backtracken\" (exponentielle Laufzeit)\n\n\n\n\n\n\n\n\nTools und Implementation\n\n\n\n\nOne Token lookahead reicht aus\n\n\nMomentan geben die Methoden \nvoid\n zur\u00fcck, wo sp\u00e4ter ein Syntaxbaum erstellt wird\n\n\nNur Syntax-Check\n\n\n\n\n\n\nF\u00fcr nicht-terminal-Symbole braucht es z.T. ein weiteres Lookahead\n\n\nM\u00f6gliche Terminalsymbole erfassen, die in einem nicht-terminal-symbol als erstes vorkommen k\u00f6nnen: \nFIRST\n Set\n\n\nFIRST-Sets k\u00f6nnen Vereinigungen von \"untergeordneten\" NT-Symbolen haben\n\n\nWenn zwei NT-Symbole nicht-disjunkte FIRST-Mengen haben, reicht ein One-Token-Lookahead nicht mehr aus, da nicht entschieden werden kann\n\n\nBraucht weiteres Lookahead, dann irgendwann drei, etc.\n\n\nStattdessen Syntax \"umformen\" f\u00fcr Parser\n\n\nF\u00fcr beide Regeln eine eigene Regeln erfassen und das Gemeinsame zusammen ziehen\n\n\n\n\n\n\n\n\n\n\n\n\nLinksrekursion\n\n\n\n\nz.B. \nSequence = Sequence [ Statement ]\n\n\nGibt bei Implementation bei Recursive Decent endlose Rekursion\n\n\nBottom-Up Parser k\u00f6nnen damit umgehen\n\n\nUmschreiben nach \nSequence = { Statement }\n\n\n\n\nSyntaxbaum\n\n\n\n\nStatement-Block ist ein Spezialfall von Statement, in anderen Sprachen ist ein Statement-Block auch ein Statement\n\n\nAchten auf Assoziativit\u00e4t bei Expressions\n\n\n\n\n\n\n\n\n\n\nFehlerbehandlung\n\n\n\n\nNur h\u00e4ufige Fehler korrigieren\n\n\nBasiert immer auf Hypothese, es k\u00f6nnen leicht Folgefehler entstehen\n\n\nAndere Fehler wie inkompatible Typen, falsche Argumentliste, etc. werden im Semantic Checker behandelt\n\n\n\n\nAttributierte Grammatiken\n\n\n\n\nEBNF-Grammatiken mit kontext-sensitiven Attributen erg\u00e4nzen\n\n\nSemantische Checks oder Erzeugen des AST\n\n\nWrite()\n ist eine Aktion und gibt lediglich etwas auf die Konsole aus\n\n\nAusgabe Folie 22: `1 2 - 3 4 - +\n\n\nPostfix-Notation wie bei HP Taschenrechner\n\n\n\n\n\n\nDie Aktionen werden immer zum Schluss \"der Parse-Methode\" ausgef\u00fchrt\n\n\nDer Parser kann auch direkt statische Ausdr\u00fccke evaluieren\n\n\nDirekt Syntaxbaum erzeugen mit \nnew BinaryExpression(...)\n etc. direkt im Attribut\n\n\nS-attributiert (synthetisiert): Attribute lesen nur Parameter von Teilregeln (rechte Seite)\n\n\nL-attributiert (Ererbt): Attribut kann auch \"linke\" Seite lesen\n\n\nEs kann alles in Grammatik beschrieben werden, in der Praxis ist dies aber un\u00fcbersichtlich und kompliziert\n\n\n\n\nBottom-Up Parser (LR-Parser)\n\n\n\n\nAnsatz: Tokenstream nehmen und \"zusammenfalten\" zu Syntaxbaum\n\n\nNach jedem gelesenen Symbol pr\u00fcfen, ob die Folge einer Regel entspricht\n\n\nWenn ja, \"Reduce\"\n\n\nWenn nein, das n\u00e4chste Zeichen auslesen (shift)\n\n\n\n\n\n\nAm Schluss muss das Startsymbol \u00fcbrig bleiben, sonst Syntaxfehler\n\n\nEs kann zu Entscheidungsschwierigkeiten kommen: \"Shift-reduce\" / \"Reduce-Reduce\" Probleme\n\n\nGrammatik anpassen oder \"von Hand\"\n\n\n\n\n\n\nLR ist \"m\u00e4chtiger\" als LL-Parser\n\n\nz.B. Linksrekursion", 
+            "title": "Parser"
+        }, 
+        {
+            "location": "/combau/parser/#parser", 
+            "text": "", 
+            "title": "Parser"
+        }, 
+        {
+            "location": "/combau/parser/#quiz-letzte-woche", 
+            "text": "Lexer liefert nur den regul\u00e4ren Anteil  Keine rekursive Syntax-Elemente, bzw. Elemente, die _nur rekursiv ausdruckbar sind", 
+            "title": "Quiz letzte Woche"
+        }, 
+        {
+            "location": "/combau/parser/#top-down-parser", 
+            "text": "Input: Terminalsymbole, Output: Syntaxbaum  Kann nur kontextfreie Sprache  z.B. nicht, ob Variable deklariert ist, oder Parameter auf Argumente passen, type checking  Diese sind kontextabh\u00e4ngig    Der Parser muss eine Ableitung der Syntaxregeln finden, um einen gegebenen Input herzuleiten  Quasi eine Ableitung r\u00fcckw\u00e4rts, von Token zu einer Regel  Diese Woche: Syntax-Check, n\u00e4chste Woche Syntaxbaum", 
+            "title": "Top-Down Parser"
+        }, 
+        {
+            "location": "/combau/parser/#syntax-baum", 
+            "text": "Konkreter Syntax-Baum (Parse Tree) befolgt die Syntax genau  Abstract Syntax-Tree (AST) kann unwichtige Details auslassen  z.B. Klammern weg lassen    AST kann nicht automatisch erzeugt werden, \"nach Gusto\" des Entwicklers  Selber implementierte Parser k\u00f6nnen direkt AST liefern", 
+            "title": "Syntax-Baum"
+        }, 
+        {
+            "location": "/combau/parser/#top-down-vs-bottom-up", 
+            "text": "Top-Down: Zuerst \"linke Seite\" der Regel anwenden, bis Eingabetext rauskommt  Immer von links her aufl\u00f6sen    Bottom-Up: Mit Eingabetext beginnen, und Regeln darauf anwenden, bis man zum \"Startsymbol\" kommt  Umgekehrt zum Top-Down Parsing", 
+            "title": "Top-Down vs. Bottom-Up"
+        }, 
+        {
+            "location": "/combau/parser/#recursive-decent", 
+            "text": "Wir nutzen den Stack der Methodenaufrufe als \"Push-Down Automat\"  Pro Nicht-terminalsymbol eine Methode  Wenn ein Nicht-Terminalsymbol in Syntax (rechte Seite) vorkommt, wird die entsprechende Methode aufgerufen  Methoden k\u00f6nnen sich gegenseitig rekursiv aufrufen  Gibt keine Entscheidungsprobleme bei Top-Down (zielorientiert)  Anderer Ansatz, wenn das nicht geht: Produktion ausprobieren und bei Fehler \"backtracken\" (exponentielle Laufzeit)", 
+            "title": "Recursive Decent"
+        }, 
+        {
+            "location": "/combau/parser/#tools-und-implementation", 
+            "text": "One Token lookahead reicht aus  Momentan geben die Methoden  void  zur\u00fcck, wo sp\u00e4ter ein Syntaxbaum erstellt wird  Nur Syntax-Check    F\u00fcr nicht-terminal-Symbole braucht es z.T. ein weiteres Lookahead  M\u00f6gliche Terminalsymbole erfassen, die in einem nicht-terminal-symbol als erstes vorkommen k\u00f6nnen:  FIRST  Set  FIRST-Sets k\u00f6nnen Vereinigungen von \"untergeordneten\" NT-Symbolen haben  Wenn zwei NT-Symbole nicht-disjunkte FIRST-Mengen haben, reicht ein One-Token-Lookahead nicht mehr aus, da nicht entschieden werden kann  Braucht weiteres Lookahead, dann irgendwann drei, etc.  Stattdessen Syntax \"umformen\" f\u00fcr Parser  F\u00fcr beide Regeln eine eigene Regeln erfassen und das Gemeinsame zusammen ziehen", 
+            "title": "Tools und Implementation"
+        }, 
+        {
+            "location": "/combau/parser/#linksrekursion", 
+            "text": "z.B.  Sequence = Sequence [ Statement ]  Gibt bei Implementation bei Recursive Decent endlose Rekursion  Bottom-Up Parser k\u00f6nnen damit umgehen  Umschreiben nach  Sequence = { Statement }", 
+            "title": "Linksrekursion"
+        }, 
+        {
+            "location": "/combau/parser/#syntaxbaum", 
+            "text": "Statement-Block ist ein Spezialfall von Statement, in anderen Sprachen ist ein Statement-Block auch ein Statement  Achten auf Assoziativit\u00e4t bei Expressions", 
+            "title": "Syntaxbaum"
+        }, 
+        {
+            "location": "/combau/parser/#fehlerbehandlung", 
+            "text": "Nur h\u00e4ufige Fehler korrigieren  Basiert immer auf Hypothese, es k\u00f6nnen leicht Folgefehler entstehen  Andere Fehler wie inkompatible Typen, falsche Argumentliste, etc. werden im Semantic Checker behandelt", 
+            "title": "Fehlerbehandlung"
+        }, 
+        {
+            "location": "/combau/parser/#attributierte-grammatiken", 
+            "text": "EBNF-Grammatiken mit kontext-sensitiven Attributen erg\u00e4nzen  Semantische Checks oder Erzeugen des AST  Write()  ist eine Aktion und gibt lediglich etwas auf die Konsole aus  Ausgabe Folie 22: `1 2 - 3 4 - +  Postfix-Notation wie bei HP Taschenrechner    Die Aktionen werden immer zum Schluss \"der Parse-Methode\" ausgef\u00fchrt  Der Parser kann auch direkt statische Ausdr\u00fccke evaluieren  Direkt Syntaxbaum erzeugen mit  new BinaryExpression(...)  etc. direkt im Attribut  S-attributiert (synthetisiert): Attribute lesen nur Parameter von Teilregeln (rechte Seite)  L-attributiert (Ererbt): Attribut kann auch \"linke\" Seite lesen  Es kann alles in Grammatik beschrieben werden, in der Praxis ist dies aber un\u00fcbersichtlich und kompliziert", 
+            "title": "Attributierte Grammatiken"
+        }, 
+        {
+            "location": "/combau/parser/#bottom-up-parser-lr-parser", 
+            "text": "Ansatz: Tokenstream nehmen und \"zusammenfalten\" zu Syntaxbaum  Nach jedem gelesenen Symbol pr\u00fcfen, ob die Folge einer Regel entspricht  Wenn ja, \"Reduce\"  Wenn nein, das n\u00e4chste Zeichen auslesen (shift)    Am Schluss muss das Startsymbol \u00fcbrig bleiben, sonst Syntaxfehler  Es kann zu Entscheidungsschwierigkeiten kommen: \"Shift-reduce\" / \"Reduce-Reduce\" Probleme  Grammatik anpassen oder \"von Hand\"    LR ist \"m\u00e4chtiger\" als LL-Parser  z.B. Linksrekursion", 
+            "title": "Bottom-Up Parser (LR-Parser)"
+        }, 
+        {
             "location": "/dl/", 
             "text": "Deep Learning", 
             "title": "Index"
