@@ -56,6 +56,31 @@
             "title": "Anforderung an Cloud Provider"
         }, 
         {
+            "location": "/clou/sla_eval/", 
+            "text": "Patterns, SLA, Evaluation\n\n\nSLAs\n\n\n\n\nAmazon bietet 99.99% Verf\u00fcgbarkeit in ihrer SLA\n\n\nEin SLA definiert messbar die Offerings des Providers, und welche Konsequenzen bei Verletzen entstehen\n\n\nDiese Ziele (aus NFA) sind Service Level Objectives (SLO)\n\n\n\n\n\n\nCustomer Agreement: Vertragsbedingungen, z.B. K\u00fcndigungsfrist\n\n\nAcceptable Use Policies (AUPs): F\u00fcr was darf der Service verwendet werden (z.B. keine Malware hosten)\n\n\nEin SLO besteht aus dem Service, das Quality-Attribut und ein Threshold-Value\n\n\nEs wird auch festgehalten, zu wie viel Prozent ein SLo eingehalten werden muss\n\n\nbsp. : SLO ist \"Response time under 1 second\", dies muss zu 90% eingehalten werden\n\n\n\n\n\n\n\n\nCC Patterns\n\n\nEvaluationstechniken und -kriterien", 
+            "title": "SLAs/Patterns"
+        }, 
+        {
+            "location": "/clou/sla_eval/#patterns-sla-evaluation", 
+            "text": "", 
+            "title": "Patterns, SLA, Evaluation"
+        }, 
+        {
+            "location": "/clou/sla_eval/#slas", 
+            "text": "Amazon bietet 99.99% Verf\u00fcgbarkeit in ihrer SLA  Ein SLA definiert messbar die Offerings des Providers, und welche Konsequenzen bei Verletzen entstehen  Diese Ziele (aus NFA) sind Service Level Objectives (SLO)    Customer Agreement: Vertragsbedingungen, z.B. K\u00fcndigungsfrist  Acceptable Use Policies (AUPs): F\u00fcr was darf der Service verwendet werden (z.B. keine Malware hosten)  Ein SLO besteht aus dem Service, das Quality-Attribut und ein Threshold-Value  Es wird auch festgehalten, zu wie viel Prozent ein SLo eingehalten werden muss  bsp. : SLO ist \"Response time under 1 second\", dies muss zu 90% eingehalten werden", 
+            "title": "SLAs"
+        }, 
+        {
+            "location": "/clou/sla_eval/#cc-patterns", 
+            "text": "", 
+            "title": "CC Patterns"
+        }, 
+        {
+            "location": "/clou/sla_eval/#evaluationstechniken-und-kriterien", 
+            "text": "", 
+            "title": "Evaluationstechniken und -kriterien"
+        }, 
+        {
             "location": "/combau/", 
             "text": "Compilerbau", 
             "title": "Index"
@@ -244,6 +269,66 @@
             "location": "/dl/linear_algebra/#eigendecomposition", 
             "text": "Av = \\lambda v   We need to find Eigenvector  v  and Eigenvalue (\\lambda)  We usually scale the Eigenvector to have length 1 (euclidian norm)   A = V \\text{diag}(\\lambda)V^{-1}", 
             "title": "Eigendecomposition"
+        }, 
+        {
+            "location": "/dl/numerical_computation/", 
+            "text": "Numerical Computation\n\n\n\n\nMost of this is handled by frameworks\n\n\n\n\nOverflow and Underflow\n\n\n\n\nUnderflow: So small that they're basically 0\n\n\n\n\n\\log x\n when x is zero: \n-\\infty\n\n\n\n\n\n\n\n\nsoftmax takes a vector, the sum will be 1, and every number will be positive -\n probability distribution\n\n\nsigmoid is softmax with 2 dimensions, where \nx = x_1 - x_2\n\n\n\n\nif the numbers in the vector are very large or very small (negative), there's an underflow / overflow problem\n\n\nsolution: subtract the max of the vector from every entry, and use the softmax on that\n\n\n\n\n\n\noften, we optimize for the log of probabilities -\n \n\\log \\text{softmax}\n\n\n\n\nuseful, because log and exp cancel each other out\n\n\ncalled \"logsoftmax\"\n\n\n\n\n\n\n\n\nPoor Conditioning\n\n\n\n\nProblem: Small change in input produces very large change in output\n\n\n\n\nGradient-Based Optimization\n\n\n\n\n\n\narg min f(x)\n: the argument \nx\n that produces the minimum of \nf(x)\n\n\n\n\nCalled the \"minimizer\"\n\n\nf(arg min f(x)) = min\n\n\n\n\n\n\nIdea: if the slope is negative, walk forwards, if it's positive, walk backwards: \"gradient descent\"\n\n\nGives us a minimum\n\n\nGradient = derivative in multiple dimensions\n\n\nIf the gradient is 0, we're either at a minimum, a maximum or a \nsaddle point\n\n\nsaddle points are common in higher dimensions\n\n\n\n\n\n\nthe goal is finding a global minimum, but we don't know if we've found it with gradient descent, except if the function is \"convex\", e.g. a quadratic function with one minimum\n\n\nThere's a derivative for every dimension\n\n\nThe gradient is a vector with all the partial derivatives for every dimension\n\n\n\n\nGradient descent for vectors\n\n\n\n\nGradient is vector that points to the steepest slope\n\n\nWe want to go in the reverse opposite of that vector to find the minimum\n\n\nanalogy: Go down a mountain by taking the steepest step each time, you'd find the valley\n\n\nminimizing: cos should be -1 -\n 180\u00b0\n\n\nThe opposite direction of \nu\n (the steepest direction)\n\n\n\n\n\n\n\n\nJacobian and Hessian Matrices\n\n\n\n\n\n\nf(x)\n is now mapping from n-dimensional to m-dimensional vector\n\n\ne.g. common between two layers in a neural network\n\n\n\n\n\n\nThe Jacobian matrix \nJ\n captures the derivate of every input entry w.r.t. to every output entry, so it's a n by m matrix\n\n\nderivates say how the change of one value affects the other\n\n\n\n\n\n\nDerivatives of derivatives can be in different directions, so there are a lot of combinations\n\n\nSecond derivative = curvature\n\n\nThe curvature of a plane is 0\n\n\nThis makes gradient descent \"easy\", just follow the derivative\n\n\n\n\n\n\nAll the combinations of curvature are captured in the Hessian matrix \nH\n\n\n\n\nThe optimal \n\\epsilon\n could be calculated with the Hessian matrix, but that's too hard to calculate (and store), so not practical\n\n\nWe can determine if we're at a minimum, maximum with the second derivative\n\n\nIf the derivate is 0, it could be a saddle point, but the test is inconclusive\n\n\nThe same concept works in higher dimensions with eigenvalues\n\n\nIf not all eigenvalues are either positive or negative, we're at a saddle point\n\n\nAlmost a chance of 1\n\n\n\n\n\n\nThe condition number tells us how much the space is \"warped\"\n\n\nif the condition number is high, gradient descent is harder (slower)", 
+            "title": "Numerical Computation"
+        }, 
+        {
+            "location": "/dl/numerical_computation/#numerical-computation", 
+            "text": "Most of this is handled by frameworks", 
+            "title": "Numerical Computation"
+        }, 
+        {
+            "location": "/dl/numerical_computation/#overflow-and-underflow", 
+            "text": "Underflow: So small that they're basically 0   \\log x  when x is zero:  -\\infty     softmax takes a vector, the sum will be 1, and every number will be positive -  probability distribution  sigmoid is softmax with 2 dimensions, where  x = x_1 - x_2   if the numbers in the vector are very large or very small (negative), there's an underflow / overflow problem  solution: subtract the max of the vector from every entry, and use the softmax on that    often, we optimize for the log of probabilities -   \\log \\text{softmax}   useful, because log and exp cancel each other out  called \"logsoftmax\"", 
+            "title": "Overflow and Underflow"
+        }, 
+        {
+            "location": "/dl/numerical_computation/#poor-conditioning", 
+            "text": "Problem: Small change in input produces very large change in output", 
+            "title": "Poor Conditioning"
+        }, 
+        {
+            "location": "/dl/numerical_computation/#gradient-based-optimization", 
+            "text": "arg min f(x) : the argument  x  that produces the minimum of  f(x)   Called the \"minimizer\"  f(arg min f(x)) = min    Idea: if the slope is negative, walk forwards, if it's positive, walk backwards: \"gradient descent\"  Gives us a minimum  Gradient = derivative in multiple dimensions  If the gradient is 0, we're either at a minimum, a maximum or a  saddle point  saddle points are common in higher dimensions    the goal is finding a global minimum, but we don't know if we've found it with gradient descent, except if the function is \"convex\", e.g. a quadratic function with one minimum  There's a derivative for every dimension  The gradient is a vector with all the partial derivatives for every dimension", 
+            "title": "Gradient-Based Optimization"
+        }, 
+        {
+            "location": "/dl/numerical_computation/#gradient-descent-for-vectors", 
+            "text": "Gradient is vector that points to the steepest slope  We want to go in the reverse opposite of that vector to find the minimum  analogy: Go down a mountain by taking the steepest step each time, you'd find the valley  minimizing: cos should be -1 -  180\u00b0  The opposite direction of  u  (the steepest direction)", 
+            "title": "Gradient descent for vectors"
+        }, 
+        {
+            "location": "/dl/numerical_computation/#jacobian-and-hessian-matrices", 
+            "text": "f(x)  is now mapping from n-dimensional to m-dimensional vector  e.g. common between two layers in a neural network    The Jacobian matrix  J  captures the derivate of every input entry w.r.t. to every output entry, so it's a n by m matrix  derivates say how the change of one value affects the other    Derivatives of derivatives can be in different directions, so there are a lot of combinations  Second derivative = curvature  The curvature of a plane is 0  This makes gradient descent \"easy\", just follow the derivative    All the combinations of curvature are captured in the Hessian matrix  H   The optimal  \\epsilon  could be calculated with the Hessian matrix, but that's too hard to calculate (and store), so not practical  We can determine if we're at a minimum, maximum with the second derivative  If the derivate is 0, it could be a saddle point, but the test is inconclusive  The same concept works in higher dimensions with eigenvalues  If not all eigenvalues are either positive or negative, we're at a saddle point  Almost a chance of 1    The condition number tells us how much the space is \"warped\"  if the condition number is high, gradient descent is harder (slower)", 
+            "title": "Jacobian and Hessian Matrices"
+        }, 
+        {
+            "location": "/dl/ml_basics/", 
+            "text": "Machine Learning Basics\n\n\n\n\n\"Generalization\": Perform well on data it hasn't seen before\n\n\nLinear regression measures the error on the training data, not on the test data\n\n\nOnly works if training and test data sets have the same distribution\n\n\n\n\n\n\nThe \"i.i.d. assumptions\"\n\n\nAssume that all examples are independent, and training and test set are identically distributed\n\n\nUse distribution of one sample to generate all test and training samples\n\n\nOptimizing for the training data will therefore also optimize for the test data\n\n\n\n\n\n\nOverfitting: Reach a low training error, but the test error is much larger\n\n\ni.e. no generalization, only \"memorized\" the training data\n\n\nGiving it too much capacity\n\n\n\n\n\n\nCapacity: Flexibility the system has\n\n\ne.g. for linear regression, increase capacity by allowing higher-order polynomials\n\n\n\n\n\n\n\n\nCheck for systems: If you can't get your system to overfit (by giving it lots of capacity), it doesn't learn properly\n\n\n\n\n\n\nEven with a perfect model, with a reasonably complex system, there's always an error\n\n\n\n\ne.g. digital communication: noise makes it impossible to always decide correctly (between 1 and 0)\n\n\n\n\n\n\n\n\n\"No Free Lunch\" theorem: No machine learning algorithm is universally better than any other\n\n\n\n\nBut assumes data of all possible distributions\n\n\nIn ML, we always concentrate on a limited range of data\n\n\ni.e. there's no \"general\" good ML algorithm\n\n\n\n\n\n\n\n\nRegularization\n\n\n\n\n\n\n\\lambda w^T w\n: All elements squared and summed up\n\n\ni.e. small weights are preferable for low cost\n\n\n\n\n\n\nIf we pick \n\\lambda\n to be large, weights will almost be zero to achieve minimal cost (underfitting)\n\n\nAlso called a \"penalty term\"\n\n\nGoal ist to minimize the generalization error but not the training error\n\n\n\n\nHyperparameters\n\n\n\n\n\n\n\\lambda\n is a \"hyperparameter\"\n\n\nparameters that are not learned by the scheme\n\n\nto train these parameters, we use part of the training data as \"validation data\" to \"tune\" the algorithm\n\n\n\n\n\n\nAfter we've used a test set once, it is \"tainted\" and should theoretically not be used anymore\n\n\nhard in practice to have enough data\n\n\n\n\n\n\n\n\nEstimators, Bias, Variance\n\n\n\n\nEstimator: \"Sch\u00e4tzer\"\n\n\nBias: Difference between Error of \"guess\" and real data\n\n\nEstimator is unbiased: It is on average right (\"Erwartungstreu\")\n\n\nVariance of Estimator\n\n\n\"SE\": Standard Error, a.k.a \n\\sqrt{var(x)}\n\n\n\n\n\n\n\n\nThe variance of a sample is \n\\frac{\\sigma}{\\sqrt m}\n\n\n\n\ni.e. lots of data reduces the variance of the estimator", 
+            "title": "Machine Learning Basics"
+        }, 
+        {
+            "location": "/dl/ml_basics/#machine-learning-basics", 
+            "text": "\"Generalization\": Perform well on data it hasn't seen before  Linear regression measures the error on the training data, not on the test data  Only works if training and test data sets have the same distribution    The \"i.i.d. assumptions\"  Assume that all examples are independent, and training and test set are identically distributed  Use distribution of one sample to generate all test and training samples  Optimizing for the training data will therefore also optimize for the test data    Overfitting: Reach a low training error, but the test error is much larger  i.e. no generalization, only \"memorized\" the training data  Giving it too much capacity    Capacity: Flexibility the system has  e.g. for linear regression, increase capacity by allowing higher-order polynomials     Check for systems: If you can't get your system to overfit (by giving it lots of capacity), it doesn't learn properly    Even with a perfect model, with a reasonably complex system, there's always an error   e.g. digital communication: noise makes it impossible to always decide correctly (between 1 and 0)     \"No Free Lunch\" theorem: No machine learning algorithm is universally better than any other   But assumes data of all possible distributions  In ML, we always concentrate on a limited range of data  i.e. there's no \"general\" good ML algorithm", 
+            "title": "Machine Learning Basics"
+        }, 
+        {
+            "location": "/dl/ml_basics/#regularization", 
+            "text": "\\lambda w^T w : All elements squared and summed up  i.e. small weights are preferable for low cost    If we pick  \\lambda  to be large, weights will almost be zero to achieve minimal cost (underfitting)  Also called a \"penalty term\"  Goal ist to minimize the generalization error but not the training error", 
+            "title": "Regularization"
+        }, 
+        {
+            "location": "/dl/ml_basics/#hyperparameters", 
+            "text": "\\lambda  is a \"hyperparameter\"  parameters that are not learned by the scheme  to train these parameters, we use part of the training data as \"validation data\" to \"tune\" the algorithm    After we've used a test set once, it is \"tainted\" and should theoretically not be used anymore  hard in practice to have enough data", 
+            "title": "Hyperparameters"
+        }, 
+        {
+            "location": "/dl/ml_basics/#estimators-bias-variance", 
+            "text": "Estimator: \"Sch\u00e4tzer\"  Bias: Difference between Error of \"guess\" and real data  Estimator is unbiased: It is on average right (\"Erwartungstreu\")  Variance of Estimator  \"SE\": Standard Error, a.k.a  \\sqrt{var(x)}     The variance of a sample is  \\frac{\\sigma}{\\sqrt m}   i.e. lots of data reduces the variance of the estimator", 
+            "title": "Estimators, Bias, Variance"
         }
     ]
 }
