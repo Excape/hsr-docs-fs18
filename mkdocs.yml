@@ -13,6 +13,7 @@ pages:
     - Cloud Solutions:
         - Index: 'clou/index.md'
         - Introduction: 'clou/introduction.md'
+        - SLAs/Patterns: 'clou/sla_eval.md'
     - Compilerbau:
         - Index: 'combau/index.md'
         - Syntax: 'combau/syntax.md'
@@ -21,6 +22,8 @@ pages:
     - Deep Learning:
         - Index: 'dl/index.md'
         - Linear Algebra: 'dl/linear_algebra.md'
+        - Numerical Computation: 'dl/numerical_computation.md'
+        - Machine Learning Basics: 'dl/ml_basics.md'
 
 markdown_extensions:
   - toc(permalink=true)
