@@ -385,6 +385,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../combau/semantic_analysis/" title="Semantische Analyse" class="md-nav__link">
+      Semantische Analyse
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -500,6 +512,27 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#maximum-likelihood-estimation" title="Maximum Likelihood Estimation" class="md-nav__link">
+    Maximum Likelihood Estimation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stochastic-gradient-descent" title="Stochastic Gradient Descent" class="md-nav__link">
+    Stochastic Gradient Descent
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#building-a-ml-algorithm" title="Building a ML algorithm" class="md-nav__link">
+    Building a ML algorithm
+  </a>
+  
+</li>
+      
       
       
       
@@ -553,6 +586,27 @@
         <li class="md-nav__item">
   <a href="#estimators-bias-variance" title="Estimators, Bias, Variance" class="md-nav__link">
     Estimators, Bias, Variance
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#maximum-likelihood-estimation" title="Maximum Likelihood Estimation" class="md-nav__link">
+    Maximum Likelihood Estimation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stochastic-gradient-descent" title="Stochastic Gradient Descent" class="md-nav__link">
+    Stochastic Gradient Descent
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#building-a-ml-algorithm" title="Building a ML algorithm" class="md-nav__link">
+    Building a ML algorithm
   </a>
   
 </li>
@@ -655,6 +709,47 @@
 <li>i.e. lots of data reduces the variance of the estimator</li>
 </ul>
 </li>
+<li>Consistency: In the limit, the estimator "guesses the right value"<ul>
+<li>Variance goes towards zero</li>
+</ul>
+</li>
+</ul>
+<h2 id="maximum-likelihood-estimation">Maximum Likelihood Estimation<a class="headerlink" href="#maximum-likelihood-estimation" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<script type="math/tex">\theta</script> are free variables<ul>
+<li>Weights of the network in a neural network</li>
+</ul>
+</li>
+<li>Find <script type="math/tex">\theta</script> such that the likelihood that the model is producing the "correct" values is maximized</li>
+<li>Usually, the log of the likelihood is maximized</li>
+<li>KL divergence: Measures how similar to distributions are<ul>
+<li>Goal: minimize KL divergence</li>
+</ul>
+</li>
+</ul>
+<div class="admonition todo">
+<p class="admonition-title">Todo</p>
+<p>Chapters 5.7 and 5.8 (supervised vs unsupervised learning) </p>
+</div>
+<h2 id="stochastic-gradient-descent">Stochastic Gradient Descent<a class="headerlink" href="#stochastic-gradient-descent" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Gradient Descent with a limited sample</li>
+<li>Negative log-likelihood is the cost function<ul>
+<li>Minimizing this cost = maximizing likelihood</li>
+</ul>
+</li>
+<li>Gradients over all of millions data points would take forever</li>
+<li>Use a select few of the data as an <em>estimate</em> of the gradient<ul>
+<li>This subset is called a "minibatch"</li>
+<li>Has to be chosen truly randomly from the whole data set</li>
+</ul>
+</li>
+<li>learning rate: step size for gradient descent</li>
+</ul>
+<h2 id="building-a-ml-algorithm">Building a ML algorithm<a class="headerlink" href="#building-a-ml-algorithm" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Only gets useful once you have a lot of data</li>
 </ul>
                 
                   

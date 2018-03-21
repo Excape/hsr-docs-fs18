@@ -13,7 +13,7 @@
         <meta name="description" content="HSR Study Documentation FS18">
       
       
-        <link rel="canonical" href="https://doc.robinsuter.ch/combau/parser/">
+        <link rel="canonical" href="https://doc.robinsuter.ch/combau/semantic_analysis/">
       
       
         <meta name="author" content="Robin Suter">
@@ -42,7 +42,7 @@
     
     
       
-        <title>Parser - HSR Notizen FS18</title>
+        <title>Semantische Analyse - HSR Notizen FS18</title>
       
     
     
@@ -97,7 +97,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search">
     <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
     
-      <a href="#parser" tabindex="1" class="md-skip">
+      <a href="#semantische-analyse" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -123,7 +123,7 @@
                 HSR Notizen FS18
               </span>
               <span class="md-header-nav__topic">
-                Parser
+                Semantische Analyse
               </span>
             
           
@@ -379,6 +379,18 @@
           
           
 
+
+  <li class="md-nav__item">
+    <a href="../parser/" title="Parser" class="md-nav__link">
+      Parser
+    </a>
+  </li>
+
+        
+          
+          
+          
+
   
 
 
@@ -390,11 +402,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="toc">
-        Parser
+        Semantische Analyse
       </label>
     
-    <a href="./" title="Parser" class="md-nav__link md-nav__link--active">
-      Parser
+    <a href="./" title="Semantische Analyse" class="md-nav__link md-nav__link--active">
+      Semantische Analyse
     </a>
     
       
@@ -408,51 +420,51 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#quiz-letzte-woche" title="Quiz letzte Woche" class="md-nav__link">
-    Quiz letzte Woche
+  <a href="#quiz" title="Quiz" class="md-nav__link">
+    Quiz
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#top-down-parser" title="Top-Down Parser" class="md-nav__link">
-    Top-Down Parser
+  <a href="#semantic-checker" title="Semantic Checker" class="md-nav__link">
+    Semantic Checker
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#syntax-baum" title="Syntax-Baum" class="md-nav__link">
-    Syntax-Baum
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#top-down-vs-bottom-up" title="Top-Down vs. Bottom-Up" class="md-nav__link">
-    Top-Down vs. Bottom-Up
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#recursive-decent" title="Recursive Decent" class="md-nav__link">
-    Recursive Decent
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#tools-und-implementation" title="Tools und Implementation" class="md-nav__link">
-    Tools und Implementation
+  <a href="#symboltabelle" title="Symboltabelle" class="md-nav__link">
+    Symboltabelle
   </a>
   
     <nav class="md-nav">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#linksrekursion" title="Linksrekursion" class="md-nav__link">
-    Linksrekursion
+  <a href="#shadowing" title="Shadowing" class="md-nav__link">
+    Shadowing
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#global-scope" title="Global Scope" class="md-nav__link">
+    Global Scope
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#design-der-symboltabelle" title="Design der Symboltabelle" class="md-nav__link">
+    Design der Symboltabelle
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vorgehen" title="Vorgehen" class="md-nav__link">
+    Vorgehen
   </a>
   
 </li>
@@ -463,29 +475,35 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#syntaxbaum" title="Syntaxbaum" class="md-nav__link">
-    Syntaxbaum
+  <a href="#namensauflosung" title="Namensauflösung" class="md-nav__link">
+    Namensauflösung
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#fehlerbehandlung" title="Fehlerbehandlung" class="md-nav__link">
-    Fehlerbehandlung
+  <a href="#type-checking" title="Type Checking" class="md-nav__link">
+    Type Checking
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ablauf" title="Ablauf" class="md-nav__link">
+    Ablauf
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#attributierte-grammatiken" title="Attributierte Grammatiken" class="md-nav__link">
-    Attributierte Grammatiken
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#bottom-up-parser-lr-parser" title="Bottom-Up Parser (LR-Parser)" class="md-nav__link">
-    Bottom-Up Parser (LR-Parser)
+  <a href="#statische-analyse" title="Statische Analyse" class="md-nav__link">
+    Statische Analyse
   </a>
   
 </li>
@@ -498,18 +516,6 @@
   
 </nav>
     
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../semantic_analysis/" title="Semantische Analyse" class="md-nav__link">
-      Semantische Analyse
-    </a>
   </li>
 
         
@@ -611,51 +617,51 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#quiz-letzte-woche" title="Quiz letzte Woche" class="md-nav__link">
-    Quiz letzte Woche
+  <a href="#quiz" title="Quiz" class="md-nav__link">
+    Quiz
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#top-down-parser" title="Top-Down Parser" class="md-nav__link">
-    Top-Down Parser
+  <a href="#semantic-checker" title="Semantic Checker" class="md-nav__link">
+    Semantic Checker
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#syntax-baum" title="Syntax-Baum" class="md-nav__link">
-    Syntax-Baum
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#top-down-vs-bottom-up" title="Top-Down vs. Bottom-Up" class="md-nav__link">
-    Top-Down vs. Bottom-Up
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#recursive-decent" title="Recursive Decent" class="md-nav__link">
-    Recursive Decent
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#tools-und-implementation" title="Tools und Implementation" class="md-nav__link">
-    Tools und Implementation
+  <a href="#symboltabelle" title="Symboltabelle" class="md-nav__link">
+    Symboltabelle
   </a>
   
     <nav class="md-nav">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#linksrekursion" title="Linksrekursion" class="md-nav__link">
-    Linksrekursion
+  <a href="#shadowing" title="Shadowing" class="md-nav__link">
+    Shadowing
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#global-scope" title="Global Scope" class="md-nav__link">
+    Global Scope
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#design-der-symboltabelle" title="Design der Symboltabelle" class="md-nav__link">
+    Design der Symboltabelle
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vorgehen" title="Vorgehen" class="md-nav__link">
+    Vorgehen
   </a>
   
 </li>
@@ -666,29 +672,35 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#syntaxbaum" title="Syntaxbaum" class="md-nav__link">
-    Syntaxbaum
+  <a href="#namensauflosung" title="Namensauflösung" class="md-nav__link">
+    Namensauflösung
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#fehlerbehandlung" title="Fehlerbehandlung" class="md-nav__link">
-    Fehlerbehandlung
+  <a href="#type-checking" title="Type Checking" class="md-nav__link">
+    Type Checking
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ablauf" title="Ablauf" class="md-nav__link">
+    Ablauf
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#attributierte-grammatiken" title="Attributierte Grammatiken" class="md-nav__link">
-    Attributierte Grammatiken
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#bottom-up-parser-lr-parser" title="Bottom-Up Parser (LR-Parser)" class="md-nav__link">
-    Bottom-Up Parser (LR-Parser)
+  <a href="#statische-analyse" title="Statische Analyse" class="md-nav__link">
+    Statische Analyse
   </a>
   
 </li>
@@ -709,134 +721,122 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/Excape/hsr-docs-fs18/edit/master/docs/combau/parser.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/Excape/hsr-docs-fs18/edit/master/docs/combau/semantic_analysis.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="parser">Parser<a class="headerlink" href="#parser" title="Permanent link">&para;</a></h1>
-<h2 id="quiz-letzte-woche">Quiz letzte Woche<a class="headerlink" href="#quiz-letzte-woche" title="Permanent link">&para;</a></h2>
+                <h1 id="semantische-analyse">Semantische Analyse<a class="headerlink" href="#semantische-analyse" title="Permanent link">&para;</a></h1>
+<h2 id="quiz">Quiz<a class="headerlink" href="#quiz" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Lexer liefert nur den regulären Anteil<ul>
-<li>Keine rekursive Syntax-Elemente, bzw. Elemente, die _nur rekursiv ausdruckbar sind</li>
+<li>Ist syntaktisch korrekt, weil ein <code>if</code> als condition eine Expression erwartet</li>
+<li>Aber semantisch falsch, bool nicht addierbar etc.<ul>
+<li>Dies sind <em>kontextsensitive</em> Regeln</li>
 </ul>
 </li>
 </ul>
-<h2 id="top-down-parser">Top-Down Parser<a class="headerlink" href="#top-down-parser" title="Permanent link">&para;</a></h2>
+<h2 id="semantic-checker">Semantic Checker<a class="headerlink" href="#semantic-checker" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Input: Terminalsymbole, Output: Syntaxbaum</li>
-<li>Kann nur kontextfreie Sprache<ul>
-<li>z.B. nicht, ob Variable deklariert ist, oder Parameter auf Argumente passen, type checking</li>
-<li>Diese sind kontextabhängig</li>
+<li>Input: AST oder konkreter Syntaxtree</li>
+<li>Output: AST + Symboltabelle</li>
+<li>Prüfen, dass das Programm gemäss Sprachregeln "Sinn macht"<ul>
+<li>Deklarationen prüfen (eindeutig und nicht mehrfach)</li>
+<li>Typen (Typregeln sind erfüllt)</li>
+<li>Method-Calls (Argumente und Parameter sind kompatibel)</li>
+<li>Und mehr...</li>
 </ul>
 </li>
-<li>Der Parser muss eine Ableitung der Syntaxregeln finden, um einen gegebenen Input herzuleiten</li>
-<li>Quasi eine Ableitung rückwärts, von Token zu einer Regel</li>
-<li>Diese Woche: Syntax-Check, nächste Woche Syntaxbaum</li>
+<li>Transformiere Programm, so dass Code Generation einfach wird<ul>
+<li>Syntaxbaum umstellen</li>
+<li>z.B. Vereinheitlichen von verschiedenen Loops, z.B. aus for- einen while-loop</li>
+<li>Array Boundary Check</li>
+<li>Implizite Casts</li>
+<li>usw.</li>
 </ul>
-<h2 id="syntax-baum">Syntax-Baum<a class="headerlink" href="#syntax-baum" title="Permanent link">&para;</a></h2>
+</li>
+</ul>
+<h2 id="symboltabelle">Symboltabelle<a class="headerlink" href="#symboltabelle" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Konkreter Syntax-Baum (Parse Tree) befolgt die Syntax genau</li>
-<li>Abstract Syntax-Tree (AST) kann unwichtige Details auslassen<ul>
-<li>z.B. Klammern weg lassen</li>
+<li>Datenstruktur zur Verwaltung von Deklarationen</li>
+<li>Zu jedem Namen ist der Scope angegeben</li>
+<li>Scopes können rekursiv sein, z.B. Methode -&gt; Methode etc.</li>
+<li>Scoping auch wichtig bei z.B. loops</li>
 </ul>
-</li>
-<li>AST kann nicht automatisch erzeugt werden, "nach Gusto" des Entwicklers</li>
-<li>Selber implementierte Parser können direkt AST liefern</li>
-</ul>
-<h2 id="top-down-vs-bottom-up">Top-Down vs. Bottom-Up<a class="headerlink" href="#top-down-vs-bottom-up" title="Permanent link">&para;</a></h2>
+<h3 id="shadowing">Shadowing<a class="headerlink" href="#shadowing" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Top-Down: Zuerst "linke Seite" der Regel anwenden, bis Eingabetext rauskommt<ul>
-<li>Immer von links her auflösen</li>
+<li>Überdecken von Deklarationen in äusserem Scope durch Defintion in innerem Scope</li>
+<li>In Rappi-sharp möglich</li>
+<li>Unterschied zu "Hiding": Beim Hiding verdecken Methoden/Variablen in einer Unterklasse die Deklaration in der Superklasse</li>
+<li>Shadowing in </li>
 </ul>
-</li>
-<li>Bottom-Up: Mit Eingabetext beginnen, und Regeln darauf anwenden, bis man zum "Startsymbol" kommt<ul>
-<li>Umgekehrt zum Top-Down Parsing</li>
-</ul>
-</li>
-</ul>
-<h2 id="recursive-decent">Recursive Decent<a class="headerlink" href="#recursive-decent" title="Permanent link">&para;</a></h2>
+<h3 id="global-scope">Global Scope<a class="headerlink" href="#global-scope" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Wir nutzen den Stack der Methodenaufrufe als "Push-Down Automat"</li>
-<li>Pro Nicht-terminalsymbol eine Methode</li>
-<li>Wenn ein Nicht-Terminalsymbol in Syntax (rechte Seite) vorkommt, wird die entsprechende Methode aufgerufen</li>
-<li>Methoden können sich gegenseitig rekursiv aufrufen</li>
-<li>Gibt keine Entscheidungsprobleme bei Top-Down (zielorientiert)<ul>
-<li>Anderer Ansatz, wenn das nicht geht: Produktion ausprobieren und bei Fehler "backtracken" (exponentielle Laufzeit)</li>
+<li>Es gibt einen global Scope<ul>
+<li>Bei uns können dort nur Klassen vorkommen</li>
 </ul>
 </li>
+<li>Keywords wie <code>true</code>, <code>int</code>, <code>bool</code> können auch dort definiert werden</li>
 </ul>
-<h2 id="tools-und-implementation">Tools und Implementation<a class="headerlink" href="#tools-und-implementation" title="Permanent link">&para;</a></h2>
+<h3 id="design-der-symboltabelle">Design der Symboltabelle<a class="headerlink" href="#design-der-symboltabelle" title="Permanent link">&para;</a></h3>
 <ul>
-<li>One Token lookahead reicht aus</li>
-<li>Momentan geben die Methoden <code>void</code> zurück, wo später ein Syntaxbaum erstellt wird<ul>
-<li>Nur Syntax-Check</li>
+<li><code>CompilationUnit</code> ist der "global" Scope</li>
+<li>Im ersten Schritt werden die Deklarationen aufgelöst, erste danach werden Typen aufgelöst<ul>
+<li>Weil während dem Durchlaufen Typen erst später deklariert werden könnten</li>
 </ul>
 </li>
-<li>Für nicht-terminal-Symbole braucht es z.T. ein weiteres Lookahead<ul>
-<li>Mögliche Terminalsymbole erfassen, die in einem nicht-terminal-symbol als erstes vorkommen können: <code>FIRST</code> Set</li>
-<li>FIRST-Sets können Vereinigungen von "untergeordneten" NT-Symbolen haben</li>
-<li>Wenn zwei NT-Symbole nicht-disjunkte FIRST-Mengen haben, reicht ein One-Token-Lookahead nicht mehr aus, da nicht entschieden werden kann<ul>
-<li>Braucht weiteres Lookahead, dann irgendwann drei, etc.</li>
-<li>Stattdessen Syntax "umformen" für Parser</li>
-<li>Für beide Regeln eine eigene Regeln erfassen und das Gemeinsame zusammen ziehen</li>
+<li>Zu einer lokalen Variable wird dazu gespeichert, in welchen Statements die Variable "lebt"</li>
+<li>Spätestens jetzt muss geprüft werden, dass <code>int</code>, <code>bool</code> etc nicht als Identifier verwendet werden!</li>
+<li><code>null</code> muss speziell behandelt werden</li>
+<li>Es gibt ein Dictionary, das Symbole zu Knoten-Referenzen mappt.</li>
+</ul>
+<h3 id="vorgehen">Vorgehen<a class="headerlink" href="#vorgehen" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Symboltabelle aufbauen</li>
+<li>Typen auflösen</li>
+<li>AST durchlaufen und mit Symboltabelle verbinden<ul>
+<li>Alle Vorkommenden Identifier verlinken mit entsprechendem Symbol </li>
 </ul>
 </li>
-</ul>
-</li>
-</ul>
-<h3 id="linksrekursion">Linksrekursion<a class="headerlink" href="#linksrekursion" title="Permanent link">&para;</a></h3>
+<li>(Unsere Aufgabe) Typen in AST bestimmen</li>
+</ol>
+<h2 id="namensauflosung">Namensauflösung<a class="headerlink" href="#namensauflosung" title="Permanent link">&para;</a></h2>
 <ul>
-<li>z.B. <code>Sequence = Sequence [ Statement ]</code></li>
-<li>Gibt bei Implementation bei Recursive Decent endlose Rekursion</li>
-<li>Bottom-Up Parser können damit umgehen</li>
-<li>Umschreiben nach <code>Sequence = { Statement }</code></li>
+<li>z.B. Typen auflösen</li>
+<li>Zuerst suche im innersten Scope, dann im nächst äusseren Scope, usw. rekursiv</li>
+<li>Suche mit <code>Find</code> Method auf Symboltabelle</li>
 </ul>
-<h2 id="syntaxbaum">Syntaxbaum<a class="headerlink" href="#syntaxbaum" title="Permanent link">&para;</a></h2>
+<h2 id="type-checking">Type Checking<a class="headerlink" href="#type-checking" title="Permanent link">&para;</a></h2>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Wichtig für Übung: Folie 32, Folie 36 Punkte 2, 4-7, 9, Folien 38-42</p>
+</div>
 <ul>
-<li>Statement-Block ist ein Spezialfall von Statement, in anderen Sprachen ist ein Statement-Block auch ein Statement</li>
-<li>Achten auf Assoziativität bei Expressions<ul>
-<li></li>
+<li>Für jede Expression den Typ bestimmen</li>
+<li>Insbesondere Binary/Binary Expressions: Typen checken</li>
+<li>Auch z.B. bei <code>if</code>: Ist condition ein bool?</li>
 </ul>
-</li>
-</ul>
-<h2 id="fehlerbehandlung">Fehlerbehandlung<a class="headerlink" href="#fehlerbehandlung" title="Permanent link">&para;</a></h2>
+<h3 id="ablauf">Ablauf<a class="headerlink" href="#ablauf" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Nur häufige Fehler korrigieren</li>
-<li>Basiert immer auf Hypothese, es können leicht Folgefehler entstehen</li>
-<li>Andere Fehler wie inkompatible Typen, falsche Argumentliste, etc. werden im Semantic Checker behandelt</li>
+<li>Post-Order-Traversierung<ul>
+<li>Zuerst child-nodes auflösen</li>
 </ul>
-<h2 id="attributierte-grammatiken">Attributierte Grammatiken<a class="headerlink" href="#attributierte-grammatiken" title="Permanent link">&para;</a></h2>
+</li>
+<li>AST nicht verändern, sondern z.B. Symboltabelle <code>FixType()</code> aufrufen</li>
+<li>Nach dem Auflösen folgt das Checking<ul>
+<li>z.B. Array length read-only, noch selbst implementieren</li>
+</ul>
+</li>
+<li>Bei Zuweisungen: Prüfen, ob rechte und linke Seite gleichen Typ haben<ul>
+<li>Ausser bei Polymorphismus und <code>null</code></li>
+<li>Gleiches Prinzip bei Methoden-Aufrufen</li>
+</ul>
+</li>
+</ul>
+<h2 id="statische-analyse">Statische Analyse<a class="headerlink" href="#statische-analyse" title="Permanent link">&para;</a></h2>
 <ul>
-<li>EBNF-Grammatiken mit kontext-sensitiven Attributen ergänzen</li>
-<li>Semantische Checks oder Erzeugen des AST</li>
-<li><code>Write()</code> ist eine Aktion und gibt lediglich etwas auf die Konsole aus</li>
-<li>Ausgabe Folie 22: `1 2 - 3 4 - +<ul>
-<li>Postfix-Notation wie bei HP Taschenrechner</li>
+<li>Checks wie Array-Bounds sind nicht allgemein entscheidbar<ul>
+<li>Kann vom Compiler transformiert werden, z.B. neue Statements einfügen</li>
 </ul>
 </li>
-<li>Die Aktionen werden immer zum Schluss "der Parse-Methode" ausgeführt</li>
-<li>Der Parser kann auch direkt statische Ausdrücke evaluieren</li>
-<li>Direkt Syntaxbaum erzeugen mit <code>new BinaryExpression(...)</code> etc. direkt im Attribut</li>
-<li>S-attributiert (synthetisiert): Attribute lesen nur Parameter von Teilregeln (rechte Seite)</li>
-<li>L-attributiert (Ererbt): Attribut kann auch "linke" Seite lesen</li>
-<li>Es kann alles in Grammatik beschrieben werden, in der Praxis ist dies aber unübersichtlich und kompliziert</li>
-</ul>
-<h2 id="bottom-up-parser-lr-parser">Bottom-Up Parser (LR-Parser)<a class="headerlink" href="#bottom-up-parser-lr-parser" title="Permanent link">&para;</a></h2>
-<ul>
-<li>Ansatz: Tokenstream nehmen und "zusammenfalten" zu Syntaxbaum</li>
-<li>Nach jedem gelesenen Symbol prüfen, ob die Folge einer Regel entspricht<ul>
-<li>Wenn ja, "Reduce"</li>
-<li>Wenn nein, das nächste Zeichen auslesen (shift)</li>
-</ul>
-</li>
-<li>Am Schluss muss das Startsymbol übrig bleiben, sonst Syntaxfehler</li>
-<li>Es kann zu Entscheidungsschwierigkeiten kommen: "Shift-reduce" / "Reduce-Reduce" Probleme<ul>
-<li>Grammatik anpassen oder "von Hand"</li>
-</ul>
-</li>
-<li>LR ist "mächtiger" als LL-Parser<ul>
-<li>z.B. Linksrekursion</li>
-</ul>
-</li>
+<li>Muss bei einer Runtime aber sowieso überprüft werden (Sicherheit), deshalb lohnt es sich hier nicht</li>
 </ul>
                 
                   
@@ -856,7 +856,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../lexer/" title="Lexer" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../parser/" title="Parser" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -865,19 +865,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Lexer
+                Parser
               </span>
             </div>
           </a>
         
         
-          <a href="../semantic_analysis/" title="Semantische Analyse" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../../dl/" title="Index" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Semantische Analyse
+                Index
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">

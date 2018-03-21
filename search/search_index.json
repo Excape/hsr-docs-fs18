@@ -226,6 +226,71 @@
             "title": "Bottom-Up Parser (LR-Parser)"
         }, 
         {
+            "location": "/combau/semantic_analysis/", 
+            "text": "Semantische Analyse\n\n\nQuiz\n\n\n\n\nIst syntaktisch korrekt, weil ein \nif\n als condition eine Expression erwartet\n\n\nAber semantisch falsch, bool nicht addierbar etc.\n\n\nDies sind \nkontextsensitive\n Regeln\n\n\n\n\n\n\n\n\nSemantic Checker\n\n\n\n\nInput: AST oder konkreter Syntaxtree\n\n\nOutput: AST + Symboltabelle\n\n\nPr\u00fcfen, dass das Programm gem\u00e4ss Sprachregeln \"Sinn macht\"\n\n\nDeklarationen pr\u00fcfen (eindeutig und nicht mehrfach)\n\n\nTypen (Typregeln sind erf\u00fcllt)\n\n\nMethod-Calls (Argumente und Parameter sind kompatibel)\n\n\nUnd mehr...\n\n\n\n\n\n\nTransformiere Programm, so dass Code Generation einfach wird\n\n\nSyntaxbaum umstellen\n\n\nz.B. Vereinheitlichen von verschiedenen Loops, z.B. aus for- einen while-loop\n\n\nArray Boundary Check\n\n\nImplizite Casts\n\n\nusw.\n\n\n\n\n\n\n\n\nSymboltabelle\n\n\n\n\nDatenstruktur zur Verwaltung von Deklarationen\n\n\nZu jedem Namen ist der Scope angegeben\n\n\nScopes k\u00f6nnen rekursiv sein, z.B. Methode -\n Methode etc.\n\n\nScoping auch wichtig bei z.B. loops\n\n\n\n\nShadowing\n\n\n\n\n\u00dcberdecken von Deklarationen in \u00e4usserem Scope durch Defintion in innerem Scope\n\n\nIn Rappi-sharp m\u00f6glich\n\n\nUnterschied zu \"Hiding\": Beim Hiding verdecken Methoden/Variablen in einer Unterklasse die Deklaration in der Superklasse\n\n\nShadowing in \n\n\n\n\nGlobal Scope\n\n\n\n\nEs gibt einen global Scope\n\n\nBei uns k\u00f6nnen dort nur Klassen vorkommen\n\n\n\n\n\n\nKeywords wie \ntrue\n, \nint\n, \nbool\n k\u00f6nnen auch dort definiert werden\n\n\n\n\nDesign der Symboltabelle\n\n\n\n\nCompilationUnit\n ist der \"global\" Scope\n\n\nIm ersten Schritt werden die Deklarationen aufgel\u00f6st, erste danach werden Typen aufgel\u00f6st\n\n\nWeil w\u00e4hrend dem Durchlaufen Typen erst sp\u00e4ter deklariert werden k\u00f6nnten\n\n\n\n\n\n\nZu einer lokalen Variable wird dazu gespeichert, in welchen Statements die Variable \"lebt\"\n\n\nSp\u00e4testens jetzt muss gepr\u00fcft werden, dass \nint\n, \nbool\n etc nicht als Identifier verwendet werden!\n\n\nnull\n muss speziell behandelt werden\n\n\nEs gibt ein Dictionary, das Symbole zu Knoten-Referenzen mappt.\n\n\n\n\nVorgehen\n\n\n\n\nSymboltabelle aufbauen\n\n\nTypen aufl\u00f6sen\n\n\nAST durchlaufen und mit Symboltabelle verbinden\n\n\nAlle Vorkommenden Identifier verlinken mit entsprechendem Symbol \n\n\n\n\n\n\n(Unsere Aufgabe) Typen in AST bestimmen\n\n\n\n\nNamensaufl\u00f6sung\n\n\n\n\nz.B. Typen aufl\u00f6sen\n\n\nZuerst suche im innersten Scope, dann im n\u00e4chst \u00e4usseren Scope, usw. rekursiv\n\n\nSuche mit \nFind\n Method auf Symboltabelle\n\n\n\n\nType Checking\n\n\n\n\nImportant\n\n\nWichtig f\u00fcr \u00dcbung: Folie 32, Folie 36 Punkte 2, 4-7, 9, Folien 38-42\n\n\n\n\n\n\nF\u00fcr jede Expression den Typ bestimmen\n\n\nInsbesondere Binary/Binary Expressions: Typen checken\n\n\nAuch z.B. bei \nif\n: Ist condition ein bool?\n\n\n\n\nAblauf\n\n\n\n\nPost-Order-Traversierung\n\n\nZuerst child-nodes aufl\u00f6sen\n\n\n\n\n\n\nAST nicht ver\u00e4ndern, sondern z.B. Symboltabelle \nFixType()\n aufrufen\n\n\nNach dem Aufl\u00f6sen folgt das Checking\n\n\nz.B. Array length read-only, noch selbst implementieren\n\n\n\n\n\n\nBei Zuweisungen: Pr\u00fcfen, ob rechte und linke Seite gleichen Typ haben\n\n\nAusser bei Polymorphismus und \nnull\n\n\nGleiches Prinzip bei Methoden-Aufrufen\n\n\n\n\n\n\n\n\nStatische Analyse\n\n\n\n\nChecks wie Array-Bounds sind nicht allgemein entscheidbar\n\n\nKann vom Compiler transformiert werden, z.B. neue Statements einf\u00fcgen\n\n\n\n\n\n\nMuss bei einer Runtime aber sowieso \u00fcberpr\u00fcft werden (Sicherheit), deshalb lohnt es sich hier nicht", 
+            "title": "Semantische Analyse"
+        }, 
+        {
+            "location": "/combau/semantic_analysis/#semantische-analyse", 
+            "text": "", 
+            "title": "Semantische Analyse"
+        }, 
+        {
+            "location": "/combau/semantic_analysis/#quiz", 
+            "text": "Ist syntaktisch korrekt, weil ein  if  als condition eine Expression erwartet  Aber semantisch falsch, bool nicht addierbar etc.  Dies sind  kontextsensitive  Regeln", 
+            "title": "Quiz"
+        }, 
+        {
+            "location": "/combau/semantic_analysis/#semantic-checker", 
+            "text": "Input: AST oder konkreter Syntaxtree  Output: AST + Symboltabelle  Pr\u00fcfen, dass das Programm gem\u00e4ss Sprachregeln \"Sinn macht\"  Deklarationen pr\u00fcfen (eindeutig und nicht mehrfach)  Typen (Typregeln sind erf\u00fcllt)  Method-Calls (Argumente und Parameter sind kompatibel)  Und mehr...    Transformiere Programm, so dass Code Generation einfach wird  Syntaxbaum umstellen  z.B. Vereinheitlichen von verschiedenen Loops, z.B. aus for- einen while-loop  Array Boundary Check  Implizite Casts  usw.", 
+            "title": "Semantic Checker"
+        }, 
+        {
+            "location": "/combau/semantic_analysis/#symboltabelle", 
+            "text": "Datenstruktur zur Verwaltung von Deklarationen  Zu jedem Namen ist der Scope angegeben  Scopes k\u00f6nnen rekursiv sein, z.B. Methode -  Methode etc.  Scoping auch wichtig bei z.B. loops", 
+            "title": "Symboltabelle"
+        }, 
+        {
+            "location": "/combau/semantic_analysis/#shadowing", 
+            "text": "\u00dcberdecken von Deklarationen in \u00e4usserem Scope durch Defintion in innerem Scope  In Rappi-sharp m\u00f6glich  Unterschied zu \"Hiding\": Beim Hiding verdecken Methoden/Variablen in einer Unterklasse die Deklaration in der Superklasse  Shadowing in", 
+            "title": "Shadowing"
+        }, 
+        {
+            "location": "/combau/semantic_analysis/#global-scope", 
+            "text": "Es gibt einen global Scope  Bei uns k\u00f6nnen dort nur Klassen vorkommen    Keywords wie  true ,  int ,  bool  k\u00f6nnen auch dort definiert werden", 
+            "title": "Global Scope"
+        }, 
+        {
+            "location": "/combau/semantic_analysis/#design-der-symboltabelle", 
+            "text": "CompilationUnit  ist der \"global\" Scope  Im ersten Schritt werden die Deklarationen aufgel\u00f6st, erste danach werden Typen aufgel\u00f6st  Weil w\u00e4hrend dem Durchlaufen Typen erst sp\u00e4ter deklariert werden k\u00f6nnten    Zu einer lokalen Variable wird dazu gespeichert, in welchen Statements die Variable \"lebt\"  Sp\u00e4testens jetzt muss gepr\u00fcft werden, dass  int ,  bool  etc nicht als Identifier verwendet werden!  null  muss speziell behandelt werden  Es gibt ein Dictionary, das Symbole zu Knoten-Referenzen mappt.", 
+            "title": "Design der Symboltabelle"
+        }, 
+        {
+            "location": "/combau/semantic_analysis/#vorgehen", 
+            "text": "Symboltabelle aufbauen  Typen aufl\u00f6sen  AST durchlaufen und mit Symboltabelle verbinden  Alle Vorkommenden Identifier verlinken mit entsprechendem Symbol     (Unsere Aufgabe) Typen in AST bestimmen", 
+            "title": "Vorgehen"
+        }, 
+        {
+            "location": "/combau/semantic_analysis/#namensauflosung", 
+            "text": "z.B. Typen aufl\u00f6sen  Zuerst suche im innersten Scope, dann im n\u00e4chst \u00e4usseren Scope, usw. rekursiv  Suche mit  Find  Method auf Symboltabelle", 
+            "title": "Namensaufl\u00f6sung"
+        }, 
+        {
+            "location": "/combau/semantic_analysis/#type-checking", 
+            "text": "Important  Wichtig f\u00fcr \u00dcbung: Folie 32, Folie 36 Punkte 2, 4-7, 9, Folien 38-42    F\u00fcr jede Expression den Typ bestimmen  Insbesondere Binary/Binary Expressions: Typen checken  Auch z.B. bei  if : Ist condition ein bool?", 
+            "title": "Type Checking"
+        }, 
+        {
+            "location": "/combau/semantic_analysis/#ablauf", 
+            "text": "Post-Order-Traversierung  Zuerst child-nodes aufl\u00f6sen    AST nicht ver\u00e4ndern, sondern z.B. Symboltabelle  FixType()  aufrufen  Nach dem Aufl\u00f6sen folgt das Checking  z.B. Array length read-only, noch selbst implementieren    Bei Zuweisungen: Pr\u00fcfen, ob rechte und linke Seite gleichen Typ haben  Ausser bei Polymorphismus und  null  Gleiches Prinzip bei Methoden-Aufrufen", 
+            "title": "Ablauf"
+        }, 
+        {
+            "location": "/combau/semantic_analysis/#statische-analyse", 
+            "text": "Checks wie Array-Bounds sind nicht allgemein entscheidbar  Kann vom Compiler transformiert werden, z.B. neue Statements einf\u00fcgen    Muss bei einer Runtime aber sowieso \u00fcberpr\u00fcft werden (Sicherheit), deshalb lohnt es sich hier nicht", 
+            "title": "Statische Analyse"
+        }, 
+        {
             "location": "/dl/", 
             "text": "Deep Learning", 
             "title": "Index"
@@ -307,7 +372,7 @@
         }, 
         {
             "location": "/dl/ml_basics/", 
-            "text": "Machine Learning Basics\n\n\n\n\n\"Generalization\": Perform well on data it hasn't seen before\n\n\nLinear regression measures the error on the training data, not on the test data\n\n\nOnly works if training and test data sets have the same distribution\n\n\n\n\n\n\nThe \"i.i.d. assumptions\"\n\n\nAssume that all examples are independent, and training and test set are identically distributed\n\n\nUse distribution of one sample to generate all test and training samples\n\n\nOptimizing for the training data will therefore also optimize for the test data\n\n\n\n\n\n\nOverfitting: Reach a low training error, but the test error is much larger\n\n\ni.e. no generalization, only \"memorized\" the training data\n\n\nGiving it too much capacity\n\n\n\n\n\n\nCapacity: Flexibility the system has\n\n\ne.g. for linear regression, increase capacity by allowing higher-order polynomials\n\n\n\n\n\n\n\n\nCheck for systems: If you can't get your system to overfit (by giving it lots of capacity), it doesn't learn properly\n\n\n\n\n\n\nEven with a perfect model, with a reasonably complex system, there's always an error\n\n\n\n\ne.g. digital communication: noise makes it impossible to always decide correctly (between 1 and 0)\n\n\n\n\n\n\n\n\n\"No Free Lunch\" theorem: No machine learning algorithm is universally better than any other\n\n\n\n\nBut assumes data of all possible distributions\n\n\nIn ML, we always concentrate on a limited range of data\n\n\ni.e. there's no \"general\" good ML algorithm\n\n\n\n\n\n\n\n\nRegularization\n\n\n\n\n\n\n\\lambda w^T w\n: All elements squared and summed up\n\n\ni.e. small weights are preferable for low cost\n\n\n\n\n\n\nIf we pick \n\\lambda\n to be large, weights will almost be zero to achieve minimal cost (underfitting)\n\n\nAlso called a \"penalty term\"\n\n\nGoal ist to minimize the generalization error but not the training error\n\n\n\n\nHyperparameters\n\n\n\n\n\n\n\\lambda\n is a \"hyperparameter\"\n\n\nparameters that are not learned by the scheme\n\n\nto train these parameters, we use part of the training data as \"validation data\" to \"tune\" the algorithm\n\n\n\n\n\n\nAfter we've used a test set once, it is \"tainted\" and should theoretically not be used anymore\n\n\nhard in practice to have enough data\n\n\n\n\n\n\n\n\nEstimators, Bias, Variance\n\n\n\n\nEstimator: \"Sch\u00e4tzer\"\n\n\nBias: Difference between Error of \"guess\" and real data\n\n\nEstimator is unbiased: It is on average right (\"Erwartungstreu\")\n\n\nVariance of Estimator\n\n\n\"SE\": Standard Error, a.k.a \n\\sqrt{var(x)}\n\n\n\n\n\n\n\n\nThe variance of a sample is \n\\frac{\\sigma}{\\sqrt m}\n\n\n\n\ni.e. lots of data reduces the variance of the estimator", 
+            "text": "Machine Learning Basics\n\n\n\n\n\"Generalization\": Perform well on data it hasn't seen before\n\n\nLinear regression measures the error on the training data, not on the test data\n\n\nOnly works if training and test data sets have the same distribution\n\n\n\n\n\n\nThe \"i.i.d. assumptions\"\n\n\nAssume that all examples are independent, and training and test set are identically distributed\n\n\nUse distribution of one sample to generate all test and training samples\n\n\nOptimizing for the training data will therefore also optimize for the test data\n\n\n\n\n\n\nOverfitting: Reach a low training error, but the test error is much larger\n\n\ni.e. no generalization, only \"memorized\" the training data\n\n\nGiving it too much capacity\n\n\n\n\n\n\nCapacity: Flexibility the system has\n\n\ne.g. for linear regression, increase capacity by allowing higher-order polynomials\n\n\n\n\n\n\n\n\nCheck for systems: If you can't get your system to overfit (by giving it lots of capacity), it doesn't learn properly\n\n\n\n\n\n\nEven with a perfect model, with a reasonably complex system, there's always an error\n\n\n\n\ne.g. digital communication: noise makes it impossible to always decide correctly (between 1 and 0)\n\n\n\n\n\n\n\n\n\"No Free Lunch\" theorem: No machine learning algorithm is universally better than any other\n\n\n\n\nBut assumes data of all possible distributions\n\n\nIn ML, we always concentrate on a limited range of data\n\n\ni.e. there's no \"general\" good ML algorithm\n\n\n\n\n\n\n\n\nRegularization\n\n\n\n\n\n\n\\lambda w^T w\n: All elements squared and summed up\n\n\ni.e. small weights are preferable for low cost\n\n\n\n\n\n\nIf we pick \n\\lambda\n to be large, weights will almost be zero to achieve minimal cost (underfitting)\n\n\nAlso called a \"penalty term\"\n\n\nGoal ist to minimize the generalization error but not the training error\n\n\n\n\nHyperparameters\n\n\n\n\n\n\n\\lambda\n is a \"hyperparameter\"\n\n\nparameters that are not learned by the scheme\n\n\nto train these parameters, we use part of the training data as \"validation data\" to \"tune\" the algorithm\n\n\n\n\n\n\nAfter we've used a test set once, it is \"tainted\" and should theoretically not be used anymore\n\n\nhard in practice to have enough data\n\n\n\n\n\n\n\n\nEstimators, Bias, Variance\n\n\n\n\nEstimator: \"Sch\u00e4tzer\"\n\n\nBias: Difference between Error of \"guess\" and real data\n\n\nEstimator is unbiased: It is on average right (\"Erwartungstreu\")\n\n\nVariance of Estimator\n\n\n\"SE\": Standard Error, a.k.a \n\\sqrt{var(x)}\n\n\n\n\n\n\n\n\nThe variance of a sample is \n\\frac{\\sigma}{\\sqrt m}\n\n\n\n\ni.e. lots of data reduces the variance of the estimator\n\n\n\n\n\n\nConsistency: In the limit, the estimator \"guesses the right value\"\n\n\nVariance goes towards zero\n\n\n\n\n\n\n\n\nMaximum Likelihood Estimation\n\n\n\n\n\n\n\\theta\n are free variables\n\n\nWeights of the network in a neural network\n\n\n\n\n\n\nFind \n\\theta\n such that the likelihood that the model is producing the \"correct\" values is maximized\n\n\nUsually, the log of the likelihood is maximized\n\n\nKL divergence: Measures how similar to distributions are\n\n\nGoal: minimize KL divergence\n\n\n\n\n\n\n\n\n\n\nTodo\n\n\nChapters 5.7 and 5.8 (supervised vs unsupervised learning) \n\n\n\n\nStochastic Gradient Descent\n\n\n\n\nGradient Descent with a limited sample\n\n\nNegative log-likelihood is the cost function\n\n\nMinimizing this cost = maximizing likelihood\n\n\n\n\n\n\nGradients over all of millions data points would take forever\n\n\nUse a select few of the data as an \nestimate\n of the gradient\n\n\nThis subset is called a \"minibatch\"\n\n\nHas to be chosen truly randomly from the whole data set\n\n\n\n\n\n\nlearning rate: step size for gradient descent\n\n\n\n\nBuilding a ML algorithm\n\n\n\n\nOnly gets useful once you have a lot of data", 
             "title": "Machine Learning Basics"
         }, 
         {
@@ -327,8 +392,23 @@
         }, 
         {
             "location": "/dl/ml_basics/#estimators-bias-variance", 
-            "text": "Estimator: \"Sch\u00e4tzer\"  Bias: Difference between Error of \"guess\" and real data  Estimator is unbiased: It is on average right (\"Erwartungstreu\")  Variance of Estimator  \"SE\": Standard Error, a.k.a  \\sqrt{var(x)}     The variance of a sample is  \\frac{\\sigma}{\\sqrt m}   i.e. lots of data reduces the variance of the estimator", 
+            "text": "Estimator: \"Sch\u00e4tzer\"  Bias: Difference between Error of \"guess\" and real data  Estimator is unbiased: It is on average right (\"Erwartungstreu\")  Variance of Estimator  \"SE\": Standard Error, a.k.a  \\sqrt{var(x)}     The variance of a sample is  \\frac{\\sigma}{\\sqrt m}   i.e. lots of data reduces the variance of the estimator    Consistency: In the limit, the estimator \"guesses the right value\"  Variance goes towards zero", 
             "title": "Estimators, Bias, Variance"
+        }, 
+        {
+            "location": "/dl/ml_basics/#maximum-likelihood-estimation", 
+            "text": "\\theta  are free variables  Weights of the network in a neural network    Find  \\theta  such that the likelihood that the model is producing the \"correct\" values is maximized  Usually, the log of the likelihood is maximized  KL divergence: Measures how similar to distributions are  Goal: minimize KL divergence      Todo  Chapters 5.7 and 5.8 (supervised vs unsupervised learning)", 
+            "title": "Maximum Likelihood Estimation"
+        }, 
+        {
+            "location": "/dl/ml_basics/#stochastic-gradient-descent", 
+            "text": "Gradient Descent with a limited sample  Negative log-likelihood is the cost function  Minimizing this cost = maximizing likelihood    Gradients over all of millions data points would take forever  Use a select few of the data as an  estimate  of the gradient  This subset is called a \"minibatch\"  Has to be chosen truly randomly from the whole data set    learning rate: step size for gradient descent", 
+            "title": "Stochastic Gradient Descent"
+        }, 
+        {
+            "location": "/dl/ml_basics/#building-a-ml-algorithm", 
+            "text": "Only gets useful once you have a lot of data", 
+            "title": "Building a ML algorithm"
         }
     ]
 }
