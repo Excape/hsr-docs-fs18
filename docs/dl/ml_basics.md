@@ -44,3 +44,29 @@
     - "SE": Standard Error, a.k.a \(\sqrt{var(x)}\)
 - The variance of a sample is \(\frac{\sigma}{\sqrt m}\)
     - i.e. lots of data reduces the variance of the estimator
+- Consistency: In the limit, the estimator "guesses the right value"
+    - Variance goes towards zero
+
+## Maximum Likelihood Estimation
+- \(\theta\) are free variables
+    - Weights of the network in a neural network
+- Find \(\theta\) such that the likelihood that the model is producing the "correct" values is maximized
+- Usually, the log of the likelihood is maximized
+- KL divergence: Measures how similar to distributions are
+    - Goal: minimize KL divergence
+
+!!! todo
+    Chapters 5.7 and 5.8 (supervised vs unsupervised learning) 
+
+## Stochastic Gradient Descent
+- Gradient Descent with a limited sample
+- Negative log-likelihood is the cost function
+    - Minimizing this cost = maximizing likelihood
+- Gradients over all of millions data points would take forever
+- Use a select few of the data as an _estimate_ of the gradient
+    - This subset is called a "minibatch"
+    - Has to be chosen truly randomly from the whole data set
+- learning rate: step size for gradient descent
+
+## Building a ML algorithm
+- Only gets useful once you have a lot of data
