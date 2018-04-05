@@ -291,6 +291,51 @@
             "title": "Statische Analyse"
         }, 
         {
+            "location": "/combau/code_generation/", 
+            "text": "Code Generierung\n\n\nOptimization\n\n\n\n\nZwischendarstellung (AST) transformieren f\u00fcr effizienteren Code\n\n\nz.B konstante Expressions, leere Statement-Bl\u00f6cke, etc.\n\n\nWird bei uns noch ausgelassen\n\n\nKann auch sp\u00e4ter, z.B. im JIT geschehen\n\n\n\n\nIntermediate Language\n\n\n\n\nZiel bei uns: Erzeugung von Code f\u00fcr eine VM\n\n\nZwischendarstellung ist die Schnittstelle zum \"Backend\", in diesem Fall eine Runtime\n\n\nMehrere Frontends: Multi-Language\n\n\nMehrere Backends: Multi-Platform\n\n\n\n\n\n\n\n\nUnsere Zielmaschine\n\n\n\n\nSubset von .NET IL\n\n\nVirtueller Stack-Prozessor\n\n\nKeine Register\n\n\n\n\n\n\n\"goto\"-machine\n\n\nKeine loops, nur \"flacher\" Code mit Branches\n\n\n\n\n\n\nMetadaten: Was sind unsere Klassen, Variablen, Typen, etc.?\n\n\nU.a. f\u00fcr Linking, Querreferenzen von anderen Libraries / Binaries\n\n\nReferenzen f\u00fcr GC \n\n\n\n\n\n\n\n\nVirtual Stack Machine\n\n\n\n\nStack in der Prozedur\n\n\nOperanden lesen (pop) und Ergebnis schreiben (push)\n\n\nErster Pop ist right-hand-side der Operation\n\n\n\n\n\n\nJede Instruktion hat gewisse Anzahl Pops und Pushes\n\n\nStack ist vor und nach der Methode \"leer\"\n\n\nKann auch alles in einem Stack ausgef\u00fchrt werden\n\n\n\n\n\n\nLokale Variablen / Parameter werden durchnummeriert\n\n\nBeispiel Auswertung: \nx = x * (7 + 11)\n\n\nIm Unterschied zu Java / .NET haben wir konkrete Boolean-Werte\n\n\nSonst w\u00e4ren es 0/1 integers\n\n\nand\n und \nor\n-Operators m\u00fcssen mit Branches nachgebaut werden (\u00e4quivalent zu if-else)\n\n\n\n\n\n\nBeispiel Boolean: \nb = !a\n\n\n\n\nKontrollfluss\n\n\n\n\nBranch to Label Instruktionen\n\n\nConditional Instruktionen (z.B. \nbrfalse\n), um zu anderen Branches zu springen\n\n\n\n\nIL-Generierung\n\n\n\n\nBuilder Pattern\n\n\nSerialisierung in XML (bei uns, f\u00fcr Komfort)\n\n\nZuerst Metadaten mit Symboltabelle erstellen\n\n\nAST Traversieren mit Visitor und Instruktionen erzeugen\n\n\nLabels werden zuerst erstellt (\nCreateLabel()\n) und erst sp\u00e4ter an den IL-Code \"attached\" (\nSetLabel()\n)\n\n\nLabels werden am Schluss \u00fcbersetzt in relative Sprungstellen (in Anzahl Instruktionen)\n\n\n\n\nCode-Templates\n\n\n\n\nMit Pattern-Matching Muster im AST erkennen\n\n\nz.B. wenn \n+\n kommt, generieren wir \nadd\n\n\nPost-Order-Traversierung und jeweils Pattern erkennen\n\n\nKleine Optimierungen m\u00f6glich\n\n\nPattern-Erkennung schwieriger, z.B. um \nif\n und \nif-else\n zu unterscheiden\n\n\nBin\u00e4re Operatoren mit Booleans als \nif-else\n behandeln", 
+            "title": "Code Generierung"
+        }, 
+        {
+            "location": "/combau/code_generation/#code-generierung", 
+            "text": "", 
+            "title": "Code Generierung"
+        }, 
+        {
+            "location": "/combau/code_generation/#optimization", 
+            "text": "Zwischendarstellung (AST) transformieren f\u00fcr effizienteren Code  z.B konstante Expressions, leere Statement-Bl\u00f6cke, etc.  Wird bei uns noch ausgelassen  Kann auch sp\u00e4ter, z.B. im JIT geschehen", 
+            "title": "Optimization"
+        }, 
+        {
+            "location": "/combau/code_generation/#intermediate-language", 
+            "text": "Ziel bei uns: Erzeugung von Code f\u00fcr eine VM  Zwischendarstellung ist die Schnittstelle zum \"Backend\", in diesem Fall eine Runtime  Mehrere Frontends: Multi-Language  Mehrere Backends: Multi-Platform", 
+            "title": "Intermediate Language"
+        }, 
+        {
+            "location": "/combau/code_generation/#unsere-zielmaschine", 
+            "text": "Subset von .NET IL  Virtueller Stack-Prozessor  Keine Register    \"goto\"-machine  Keine loops, nur \"flacher\" Code mit Branches    Metadaten: Was sind unsere Klassen, Variablen, Typen, etc.?  U.a. f\u00fcr Linking, Querreferenzen von anderen Libraries / Binaries  Referenzen f\u00fcr GC", 
+            "title": "Unsere Zielmaschine"
+        }, 
+        {
+            "location": "/combau/code_generation/#virtual-stack-machine", 
+            "text": "Stack in der Prozedur  Operanden lesen (pop) und Ergebnis schreiben (push)  Erster Pop ist right-hand-side der Operation    Jede Instruktion hat gewisse Anzahl Pops und Pushes  Stack ist vor und nach der Methode \"leer\"  Kann auch alles in einem Stack ausgef\u00fchrt werden    Lokale Variablen / Parameter werden durchnummeriert  Beispiel Auswertung:  x = x * (7 + 11)  Im Unterschied zu Java / .NET haben wir konkrete Boolean-Werte  Sonst w\u00e4ren es 0/1 integers  and  und  or -Operators m\u00fcssen mit Branches nachgebaut werden (\u00e4quivalent zu if-else)    Beispiel Boolean:  b = !a", 
+            "title": "Virtual Stack Machine"
+        }, 
+        {
+            "location": "/combau/code_generation/#kontrollfluss", 
+            "text": "Branch to Label Instruktionen  Conditional Instruktionen (z.B.  brfalse ), um zu anderen Branches zu springen", 
+            "title": "Kontrollfluss"
+        }, 
+        {
+            "location": "/combau/code_generation/#il-generierung", 
+            "text": "Builder Pattern  Serialisierung in XML (bei uns, f\u00fcr Komfort)  Zuerst Metadaten mit Symboltabelle erstellen  AST Traversieren mit Visitor und Instruktionen erzeugen  Labels werden zuerst erstellt ( CreateLabel() ) und erst sp\u00e4ter an den IL-Code \"attached\" ( SetLabel() )  Labels werden am Schluss \u00fcbersetzt in relative Sprungstellen (in Anzahl Instruktionen)", 
+            "title": "IL-Generierung"
+        }, 
+        {
+            "location": "/combau/code_generation/#code-templates", 
+            "text": "Mit Pattern-Matching Muster im AST erkennen  z.B. wenn  +  kommt, generieren wir  add  Post-Order-Traversierung und jeweils Pattern erkennen  Kleine Optimierungen m\u00f6glich  Pattern-Erkennung schwieriger, z.B. um  if  und  if-else  zu unterscheiden  Bin\u00e4re Operatoren mit Booleans als  if-else  behandeln", 
+            "title": "Code-Templates"
+        }, 
+        {
             "location": "/dl/", 
             "text": "Deep Learning", 
             "title": "Index"
@@ -409,6 +454,41 @@
             "location": "/dl/ml_basics/#building-a-ml-algorithm", 
             "text": "Only gets useful once you have a lot of data", 
             "title": "Building a ML algorithm"
+        }, 
+        {
+            "location": "/dl/deep_feed-forward_networks/", 
+            "text": "Deep Feedforward Network\n\n\nBasics\n\n\n\n\nIn supervised learning, we know the desired output for a given input\n\n\n\n\n\\theta\n represents the parameters of the network, a.k.a the weights and biases\n\n\nthe middle layers are \"hidden layers\", because we don't know what good values for them are\n\n\n\n\nXOR Example\n\n\n\n\nAnswer with linear regression is always \n, since it has the LSE\n\n\n\n\nGradient-Based Learning\n\n\n\n\nInitialize weights with small random values\n\n\nOtherwise the output is just 0\n\n\nAnd to break symmetry between neuros, otherwise they would do similar / same things\n\n\n\n\n\n\nSigmoid used to be popular, but now ReLU is mostly used (\nmax(0, z)\n)\n\n\nGood Architecture is not well-defined\n\n\nHow many units, layers, etc.?\n\n\napproach: Use someone else's architecture that already works\n\n\nThere are rarely completely new problems\n\n\n\n\n\n\n\n\nBack Propagation\n\n\n\n\nBasically calculates the gradient of the cost functions with respect to the weights and biases\n\n\nThe gradient is calculated \nanalytically\n, not computationally\n\n\n\n\nChain Rule\n\n\n\n\nFF-Network is like a nested function (with each layer)\n\n\nbackprop is a dynamic algorithm that calculates the chain rule efficiently\n\n\nJacobian-matrix is diagonal if the function is element-wise\n\n\nReLU and sigmoid are", 
+            "title": "Deep Feedforward Networks"
+        }, 
+        {
+            "location": "/dl/deep_feed-forward_networks/#deep-feedforward-network", 
+            "text": "", 
+            "title": "Deep Feedforward Network"
+        }, 
+        {
+            "location": "/dl/deep_feed-forward_networks/#basics", 
+            "text": "In supervised learning, we know the desired output for a given input   \\theta  represents the parameters of the network, a.k.a the weights and biases  the middle layers are \"hidden layers\", because we don't know what good values for them are", 
+            "title": "Basics"
+        }, 
+        {
+            "location": "/dl/deep_feed-forward_networks/#xor-example", 
+            "text": "Answer with linear regression is always  , since it has the LSE", 
+            "title": "XOR Example"
+        }, 
+        {
+            "location": "/dl/deep_feed-forward_networks/#gradient-based-learning", 
+            "text": "Initialize weights with small random values  Otherwise the output is just 0  And to break symmetry between neuros, otherwise they would do similar / same things    Sigmoid used to be popular, but now ReLU is mostly used ( max(0, z) )  Good Architecture is not well-defined  How many units, layers, etc.?  approach: Use someone else's architecture that already works  There are rarely completely new problems", 
+            "title": "Gradient-Based Learning"
+        }, 
+        {
+            "location": "/dl/deep_feed-forward_networks/#back-propagation", 
+            "text": "Basically calculates the gradient of the cost functions with respect to the weights and biases  The gradient is calculated  analytically , not computationally", 
+            "title": "Back Propagation"
+        }, 
+        {
+            "location": "/dl/deep_feed-forward_networks/#chain-rule", 
+            "text": "FF-Network is like a nested function (with each layer)  backprop is a dynamic algorithm that calculates the chain rule efficiently  Jacobian-matrix is diagonal if the function is element-wise  ReLU and sigmoid are", 
+            "title": "Chain Rule"
         }
     ]
 }

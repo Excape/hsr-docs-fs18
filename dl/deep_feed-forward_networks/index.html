@@ -13,7 +13,7 @@
         <meta name="description" content="HSR Study Documentation FS18">
       
       
-        <link rel="canonical" href="https://doc.robinsuter.ch/combau/parser/">
+        <link rel="canonical" href="https://doc.robinsuter.ch/dl/deep_feed-forward_networks/">
       
       
         <meta name="author" content="Robin Suter">
@@ -42,7 +42,7 @@
     
     
       
-        <title>Parser - HSR Notizen FS18</title>
+        <title>Deep Feedforward Networks - HSR Notizen FS18</title>
       
     
     
@@ -97,7 +97,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
     
-      <a href="#parser" tabindex="1" class="md-skip">
+      <a href="#deep-feedforward-network" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -123,7 +123,7 @@
                 HSR Notizen FS18
               </span>
               <span class="md-header-nav__topic">
-                Parser
+                Deep Feedforward Networks
               </span>
             
           
@@ -322,12 +322,10 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
     
     <label class="md-nav__link" for="nav-4">
       Compilerbau
@@ -335,6 +333,104 @@
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
       <label class="md-nav__title" for="nav-4">
         Compilerbau
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../combau/" title="Index" class="md-nav__link">
+      Index
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../combau/syntax/" title="Syntax" class="md-nav__link">
+      Syntax
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../combau/lexer/" title="Lexer" class="md-nav__link">
+      Lexer
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../combau/parser/" title="Parser" class="md-nav__link">
+      Parser
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../combau/semantic_analysis/" title="Semantische Analyse" class="md-nav__link">
+      Semantische Analyse
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../combau/code_generation/" title="Code Generierung" class="md-nav__link">
+      Code Generierung
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" checked>
+    
+    <label class="md-nav__link" for="nav-5">
+      Deep Learning
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        Deep Learning
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -357,8 +453,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../syntax/" title="Syntax" class="md-nav__link">
-      Syntax
+    <a href="../linear_algebra/" title="Linear Algebra" class="md-nav__link">
+      Linear Algebra
     </a>
   </li>
 
@@ -369,8 +465,20 @@
 
 
   <li class="md-nav__item">
-    <a href="../lexer/" title="Lexer" class="md-nav__link">
-      Lexer
+    <a href="../numerical_computation/" title="Numerical Computation" class="md-nav__link">
+      Numerical Computation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ml_basics/" title="Machine Learning Basics" class="md-nav__link">
+      Machine Learning Basics
     </a>
   </li>
 
@@ -390,11 +498,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="toc">
-        Parser
+        Deep Feedforward Networks
       </label>
     
-    <a href="./" title="Parser" class="md-nav__link md-nav__link--active">
-      Parser
+    <a href="./" title="Deep Feedforward Networks" class="md-nav__link md-nav__link--active">
+      Deep Feedforward Networks
     </a>
     
       
@@ -408,85 +516,43 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#quiz-letzte-woche" title="Quiz letzte Woche" class="md-nav__link">
-    Quiz letzte Woche
+  <a href="#basics" title="Basics" class="md-nav__link">
+    Basics
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#top-down-parser" title="Top-Down Parser" class="md-nav__link">
-    Top-Down Parser
+  <a href="#xor-example" title="XOR Example" class="md-nav__link">
+    XOR Example
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#syntax-baum" title="Syntax-Baum" class="md-nav__link">
-    Syntax-Baum
+  <a href="#gradient-based-learning" title="Gradient-Based Learning" class="md-nav__link">
+    Gradient-Based Learning
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#top-down-vs-bottom-up" title="Top-Down vs. Bottom-Up" class="md-nav__link">
-    Top-Down vs. Bottom-Up
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#recursive-decent" title="Recursive Decent" class="md-nav__link">
-    Recursive Decent
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#tools-und-implementation" title="Tools und Implementation" class="md-nav__link">
-    Tools und Implementation
+  <a href="#back-propagation" title="Back Propagation" class="md-nav__link">
+    Back Propagation
   </a>
   
     <nav class="md-nav">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#linksrekursion" title="Linksrekursion" class="md-nav__link">
-    Linksrekursion
+  <a href="#chain-rule" title="Chain Rule" class="md-nav__link">
+    Chain Rule
   </a>
   
 </li>
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#syntaxbaum" title="Syntaxbaum" class="md-nav__link">
-    Syntaxbaum
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#fehlerbehandlung" title="Fehlerbehandlung" class="md-nav__link">
-    Fehlerbehandlung
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#attributierte-grammatiken" title="Attributierte Grammatiken" class="md-nav__link">
-    Attributierte Grammatiken
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#bottom-up-parser-lr-parser" title="Bottom-Up Parser (LR-Parser)" class="md-nav__link">
-    Bottom-Up Parser (LR-Parser)
-  </a>
   
 </li>
       
@@ -498,114 +564,6 @@
   
 </nav>
     
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../semantic_analysis/" title="Semantische Analyse" class="md-nav__link">
-      Semantische Analyse
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../code_generation/" title="Code Generierung" class="md-nav__link">
-      Code Generierung
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
-    
-    <label class="md-nav__link" for="nav-5">
-      Deep Learning
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-5">
-        Deep Learning
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../dl/" title="Index" class="md-nav__link">
-      Index
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../dl/linear_algebra/" title="Linear Algebra" class="md-nav__link">
-      Linear Algebra
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../dl/numerical_computation/" title="Numerical Computation" class="md-nav__link">
-      Numerical Computation
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../dl/ml_basics/" title="Machine Learning Basics" class="md-nav__link">
-      Machine Learning Basics
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../dl/deep_feed-forward_networks/" title="Deep Feedforward Networks" class="md-nav__link">
-      Deep Feedforward Networks
-    </a>
   </li>
 
         
@@ -635,85 +593,43 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#quiz-letzte-woche" title="Quiz letzte Woche" class="md-nav__link">
-    Quiz letzte Woche
+  <a href="#basics" title="Basics" class="md-nav__link">
+    Basics
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#top-down-parser" title="Top-Down Parser" class="md-nav__link">
-    Top-Down Parser
+  <a href="#xor-example" title="XOR Example" class="md-nav__link">
+    XOR Example
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#syntax-baum" title="Syntax-Baum" class="md-nav__link">
-    Syntax-Baum
+  <a href="#gradient-based-learning" title="Gradient-Based Learning" class="md-nav__link">
+    Gradient-Based Learning
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#top-down-vs-bottom-up" title="Top-Down vs. Bottom-Up" class="md-nav__link">
-    Top-Down vs. Bottom-Up
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#recursive-decent" title="Recursive Decent" class="md-nav__link">
-    Recursive Decent
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#tools-und-implementation" title="Tools und Implementation" class="md-nav__link">
-    Tools und Implementation
+  <a href="#back-propagation" title="Back Propagation" class="md-nav__link">
+    Back Propagation
   </a>
   
     <nav class="md-nav">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#linksrekursion" title="Linksrekursion" class="md-nav__link">
-    Linksrekursion
+  <a href="#chain-rule" title="Chain Rule" class="md-nav__link">
+    Chain Rule
   </a>
   
 </li>
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#syntaxbaum" title="Syntaxbaum" class="md-nav__link">
-    Syntaxbaum
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#fehlerbehandlung" title="Fehlerbehandlung" class="md-nav__link">
-    Fehlerbehandlung
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#attributierte-grammatiken" title="Attributierte Grammatiken" class="md-nav__link">
-    Attributierte Grammatiken
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#bottom-up-parser-lr-parser" title="Bottom-Up Parser (LR-Parser)" class="md-nav__link">
-    Bottom-Up Parser (LR-Parser)
-  </a>
   
 </li>
       
@@ -733,132 +649,47 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/Excape/hsr-docs-fs18/edit/master/docs/combau/parser.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/Excape/hsr-docs-fs18/edit/master/docs/dl/deep_feed-forward_networks.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="parser">Parser<a class="headerlink" href="#parser" title="Permanent link">&para;</a></h1>
-<h2 id="quiz-letzte-woche">Quiz letzte Woche<a class="headerlink" href="#quiz-letzte-woche" title="Permanent link">&para;</a></h2>
+                <h1 id="deep-feedforward-network">Deep Feedforward Network<a class="headerlink" href="#deep-feedforward-network" title="Permanent link">&para;</a></h1>
+<h2 id="basics">Basics<a class="headerlink" href="#basics" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Lexer liefert nur den regulären Anteil<ul>
-<li>Keine rekursive Syntax-Elemente, bzw. Elemente, die _nur rekursiv ausdruckbar sind</li>
+<li>In supervised learning, we know the desired output for a given input</li>
+<li>
+<script type="math/tex">\theta</script> represents the parameters of the network, a.k.a the weights and biases</li>
+<li>the middle layers are "hidden layers", because we don't know what good values for them are</li>
 </ul>
-</li>
-</ul>
-<h2 id="top-down-parser">Top-Down Parser<a class="headerlink" href="#top-down-parser" title="Permanent link">&para;</a></h2>
+<h2 id="xor-example">XOR Example<a class="headerlink" href="#xor-example" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Input: Terminalsymbole, Output: Syntaxbaum</li>
-<li>Kann nur kontextfreie Sprache<ul>
-<li>z.B. nicht, ob Variable deklariert ist, oder Parameter auf Argumente passen, type checking</li>
-<li>Diese sind kontextabhängig</li>
+<li>Answer with linear regression is always &frac12;, since it has the LSE</li>
 </ul>
-</li>
-<li>Der Parser muss eine Ableitung der Syntaxregeln finden, um einen gegebenen Input herzuleiten</li>
-<li>Quasi eine Ableitung rückwärts, von Token zu einer Regel</li>
-<li>Diese Woche: Syntax-Check, nächste Woche Syntaxbaum</li>
-</ul>
-<h2 id="syntax-baum">Syntax-Baum<a class="headerlink" href="#syntax-baum" title="Permanent link">&para;</a></h2>
+<h2 id="gradient-based-learning">Gradient-Based Learning<a class="headerlink" href="#gradient-based-learning" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Konkreter Syntax-Baum (Parse Tree) befolgt die Syntax genau</li>
-<li>Abstract Syntax-Tree (AST) kann unwichtige Details auslassen<ul>
-<li>z.B. Klammern weg lassen</li>
+<li>Initialize weights with small random values<ul>
+<li>Otherwise the output is just 0</li>
+<li>And to break symmetry between neuros, otherwise they would do similar / same things</li>
 </ul>
 </li>
-<li>AST kann nicht automatisch erzeugt werden, "nach Gusto" des Entwicklers</li>
-<li>Selber implementierte Parser können direkt AST liefern</li>
+<li>Sigmoid used to be popular, but now ReLU is mostly used (<code>max(0, z)</code>)</li>
+<li>Good Architecture is not well-defined<ul>
+<li>How many units, layers, etc.?</li>
+<li>approach: Use someone else's architecture that already works</li>
+<li>There are rarely completely new problems</li>
 </ul>
-<h2 id="top-down-vs-bottom-up">Top-Down vs. Bottom-Up<a class="headerlink" href="#top-down-vs-bottom-up" title="Permanent link">&para;</a></h2>
+</li>
+</ul>
+<h2 id="back-propagation">Back Propagation<a class="headerlink" href="#back-propagation" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Top-Down: Zuerst "linke Seite" der Regel anwenden, bis Eingabetext rauskommt<ul>
-<li>Immer von links her auflösen</li>
+<li>Basically calculates the gradient of the cost functions with respect to the weights and biases</li>
+<li>The gradient is calculated <em>analytically</em>, not computationally</li>
 </ul>
-</li>
-<li>Bottom-Up: Mit Eingabetext beginnen, und Regeln darauf anwenden, bis man zum "Startsymbol" kommt<ul>
-<li>Umgekehrt zum Top-Down Parsing</li>
-</ul>
-</li>
-</ul>
-<h2 id="recursive-decent">Recursive Decent<a class="headerlink" href="#recursive-decent" title="Permanent link">&para;</a></h2>
+<h3 id="chain-rule">Chain Rule<a class="headerlink" href="#chain-rule" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Wir nutzen den Stack der Methodenaufrufe als "Push-Down Automat"</li>
-<li>Pro Nicht-terminalsymbol eine Methode</li>
-<li>Wenn ein Nicht-Terminalsymbol in Syntax (rechte Seite) vorkommt, wird die entsprechende Methode aufgerufen</li>
-<li>Methoden können sich gegenseitig rekursiv aufrufen</li>
-<li>Gibt keine Entscheidungsprobleme bei Top-Down (zielorientiert)<ul>
-<li>Anderer Ansatz, wenn das nicht geht: Produktion ausprobieren und bei Fehler "backtracken" (exponentielle Laufzeit)</li>
-</ul>
-</li>
-</ul>
-<h2 id="tools-und-implementation">Tools und Implementation<a class="headerlink" href="#tools-und-implementation" title="Permanent link">&para;</a></h2>
-<ul>
-<li>One Token lookahead reicht aus</li>
-<li>Momentan geben die Methoden <code>void</code> zurück, wo später ein Syntaxbaum erstellt wird<ul>
-<li>Nur Syntax-Check</li>
-</ul>
-</li>
-<li>Für nicht-terminal-Symbole braucht es z.T. ein weiteres Lookahead<ul>
-<li>Mögliche Terminalsymbole erfassen, die in einem nicht-terminal-symbol als erstes vorkommen können: <code>FIRST</code> Set</li>
-<li>FIRST-Sets können Vereinigungen von "untergeordneten" NT-Symbolen haben</li>
-<li>Wenn zwei NT-Symbole nicht-disjunkte FIRST-Mengen haben, reicht ein One-Token-Lookahead nicht mehr aus, da nicht entschieden werden kann<ul>
-<li>Braucht weiteres Lookahead, dann irgendwann drei, etc.</li>
-<li>Stattdessen Syntax "umformen" für Parser</li>
-<li>Für beide Regeln eine eigene Regeln erfassen und das Gemeinsame zusammen ziehen</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="linksrekursion">Linksrekursion<a class="headerlink" href="#linksrekursion" title="Permanent link">&para;</a></h3>
-<ul>
-<li>z.B. <code>Sequence = Sequence [ Statement ]</code></li>
-<li>Gibt bei Implementation bei Recursive Decent endlose Rekursion</li>
-<li>Bottom-Up Parser können damit umgehen</li>
-<li>Umschreiben nach <code>Sequence = { Statement }</code></li>
-</ul>
-<h2 id="syntaxbaum">Syntaxbaum<a class="headerlink" href="#syntaxbaum" title="Permanent link">&para;</a></h2>
-<ul>
-<li>Statement-Block ist ein Spezialfall von Statement, in anderen Sprachen ist ein Statement-Block auch ein Statement</li>
-<li>Achten auf Assoziativität bei Expressions<ul>
-<li></li>
-</ul>
-</li>
-</ul>
-<h2 id="fehlerbehandlung">Fehlerbehandlung<a class="headerlink" href="#fehlerbehandlung" title="Permanent link">&para;</a></h2>
-<ul>
-<li>Nur häufige Fehler korrigieren</li>
-<li>Basiert immer auf Hypothese, es können leicht Folgefehler entstehen</li>
-<li>Andere Fehler wie inkompatible Typen, falsche Argumentliste, etc. werden im Semantic Checker behandelt</li>
-</ul>
-<h2 id="attributierte-grammatiken">Attributierte Grammatiken<a class="headerlink" href="#attributierte-grammatiken" title="Permanent link">&para;</a></h2>
-<ul>
-<li>EBNF-Grammatiken mit kontext-sensitiven Attributen ergänzen</li>
-<li>Semantische Checks oder Erzeugen des AST</li>
-<li><code>Write()</code> ist eine Aktion und gibt lediglich etwas auf die Konsole aus</li>
-<li>Ausgabe Folie 22: `1 2 - 3 4 - +<ul>
-<li>Postfix-Notation wie bei HP Taschenrechner</li>
-</ul>
-</li>
-<li>Die Aktionen werden immer zum Schluss "der Parse-Methode" ausgeführt</li>
-<li>Der Parser kann auch direkt statische Ausdrücke evaluieren</li>
-<li>Direkt Syntaxbaum erzeugen mit <code>new BinaryExpression(...)</code> etc. direkt im Attribut</li>
-<li>S-attributiert (synthetisiert): Attribute lesen nur Parameter von Teilregeln (rechte Seite)</li>
-<li>L-attributiert (Ererbt): Attribut kann auch "linke" Seite lesen</li>
-<li>Es kann alles in Grammatik beschrieben werden, in der Praxis ist dies aber unübersichtlich und kompliziert</li>
-</ul>
-<h2 id="bottom-up-parser-lr-parser">Bottom-Up Parser (LR-Parser)<a class="headerlink" href="#bottom-up-parser-lr-parser" title="Permanent link">&para;</a></h2>
-<ul>
-<li>Ansatz: Tokenstream nehmen und "zusammenfalten" zu Syntaxbaum</li>
-<li>Nach jedem gelesenen Symbol prüfen, ob die Folge einer Regel entspricht<ul>
-<li>Wenn ja, "Reduce"</li>
-<li>Wenn nein, das nächste Zeichen auslesen (shift)</li>
-</ul>
-</li>
-<li>Am Schluss muss das Startsymbol übrig bleiben, sonst Syntaxfehler</li>
-<li>Es kann zu Entscheidungsschwierigkeiten kommen: "Shift-reduce" / "Reduce-Reduce" Probleme<ul>
-<li>Grammatik anpassen oder "von Hand"</li>
-</ul>
-</li>
-<li>LR ist "mächtiger" als LL-Parser<ul>
-<li>z.B. Linksrekursion</li>
+<li>FF-Network is like a nested function (with each layer)</li>
+<li>backprop is a dynamic algorithm that calculates the chain rule efficiently</li>
+<li>Jacobian-matrix is diagonal if the function is element-wise<ul>
+<li>ReLU and sigmoid are</li>
 </ul>
 </li>
 </ul>
@@ -882,7 +713,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../lexer/" title="Lexer" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../ml_basics/" title="Machine Learning Basics" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -891,25 +722,11 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Lexer
+                Machine Learning Basics
               </span>
             </div>
           </a>
         
-        
-          <a href="../semantic_analysis/" title="Semantische Analyse" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
-            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
-              <span class="md-flex__ellipsis">
-                <span class="md-footer-nav__direction">
-                  Next
-                </span>
-                Semantische Analyse
-              </span>
-            </div>
-            <div class="md-flex__cell md-flex__cell--shrink">
-              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
-            </div>
-          </a>
         
       </nav>
     </div>

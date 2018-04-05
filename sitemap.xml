@@ -4,7 +4,7 @@
     
     <url>
      <loc>https://doc.robinsuter.ch/</loc>
-     <lastmod>2018-03-21</lastmod>
+     <lastmod>2018-04-05</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -12,7 +12,7 @@
     
     <url>
      <loc>https://doc.robinsuter.ch/playground/</loc>
-     <lastmod>2018-03-21</lastmod>
+     <lastmod>2018-04-05</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -21,19 +21,19 @@
         
     <url>
      <loc>https://doc.robinsuter.ch/clou/</loc>
-     <lastmod>2018-03-21</lastmod>
+     <lastmod>2018-04-05</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>https://doc.robinsuter.ch/clou/introduction/</loc>
-     <lastmod>2018-03-21</lastmod>
+     <lastmod>2018-04-05</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>https://doc.robinsuter.ch/clou/sla_eval/</loc>
-     <lastmod>2018-03-21</lastmod>
+     <lastmod>2018-04-05</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -43,31 +43,37 @@
         
     <url>
      <loc>https://doc.robinsuter.ch/combau/</loc>
-     <lastmod>2018-03-21</lastmod>
+     <lastmod>2018-04-05</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>https://doc.robinsuter.ch/combau/syntax/</loc>
-     <lastmod>2018-03-21</lastmod>
+     <lastmod>2018-04-05</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>https://doc.robinsuter.ch/combau/lexer/</loc>
-     <lastmod>2018-03-21</lastmod>
+     <lastmod>2018-04-05</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>https://doc.robinsuter.ch/combau/parser/</loc>
-     <lastmod>2018-03-21</lastmod>
+     <lastmod>2018-04-05</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>https://doc.robinsuter.ch/combau/semantic_analysis/</loc>
-     <lastmod>2018-03-21</lastmod>
+     <lastmod>2018-04-05</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>https://doc.robinsuter.ch/combau/code_generation/</loc>
+     <lastmod>2018-04-05</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -77,25 +83,31 @@
         
     <url>
      <loc>https://doc.robinsuter.ch/dl/</loc>
-     <lastmod>2018-03-21</lastmod>
+     <lastmod>2018-04-05</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>https://doc.robinsuter.ch/dl/linear_algebra/</loc>
-     <lastmod>2018-03-21</lastmod>
+     <lastmod>2018-04-05</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>https://doc.robinsuter.ch/dl/numerical_computation/</loc>
-     <lastmod>2018-03-21</lastmod>
+     <lastmod>2018-04-05</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>https://doc.robinsuter.ch/dl/ml_basics/</loc>
-     <lastmod>2018-03-21</lastmod>
+     <lastmod>2018-04-05</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>https://doc.robinsuter.ch/dl/deep_feed-forward_networks/</loc>
+     <lastmod>2018-04-05</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
