@@ -21,12 +21,14 @@ pages:
         - Parser: 'combau/parser.md'
         - Semantische Analyse: 'combau/semantic_analysis.md'
         - Code Generierung: 'combau/code_generation.md'
+        - Virtual Machine: 'combau/virtual_machine.md'
     - Deep Learning:
         - Index: 'dl/index.md'
         - Linear Algebra: 'dl/linear_algebra.md'
         - Numerical Computation: 'dl/numerical_computation.md'
         - Machine Learning Basics: 'dl/ml_basics.md'
         - Deep Feedforward Networks: 'dl/deep_feed-forward_networks.md'
+        - Regularization: 'dl/regularization.md'
 
 markdown_extensions:
   - toc(permalink=true)
