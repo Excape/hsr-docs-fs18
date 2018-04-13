@@ -336,6 +336,51 @@
             "title": "Code-Templates"
         }, 
         {
+            "location": "/combau/virtual_machine/", 
+            "text": "Virtual Machine\n\n\nVirtual Machine\n\n\n\n\nHypothetische Maschine, die die IL versteht\n\n\n\"Virtueller Prozessor\" mit IL als Instruktionssatz\n\n\nBietet Mehrsprachigkeit, Multi Platform\n\n\nTrennt Compiler von Laufzeit\n\n\n\n\nLoader\n\n\n\n\nL\u00e4dt IL in Speicher\n\n\nAlloziert Speicher\n\n\nAddress Relocation\n\n\nAdressen m\u00fcssen \"gefixt\" werden, weil Speicher nacheinander alloziert wird\n\n\n\n\n\n\nVerifier: Statische Analyse des Codes\n\n\nInitiiert Ausf\u00fchrung auf Interpreter / JIT\n\n\nIL-Code wird direkt in Speicher geladen\n\n\nMethodenaufrufe werden aufgel\u00f6st mit Deskriptoren (\"Fixup\")\n\n\n\n\n\n\n\n\nMetadaten\n\n\n\n\nTyp-Deskriptoren\n\n\n\u00c4hnlich Symboltabelle\n\n\nBeschreiben die Subtypen von Typen\n\n\nz.B. Field types von Klassen\n\n\n\n\n\n\n\n\nInterpreter\n\n\n\n\nInterpretiert den IL-Code\n\n\nProduziert Code f\u00fcr Hardware-Ausf\u00fchrung oder f\u00fcr JIT\n\n\nDer Prozess wird unterst\u00fctzt von Metadaten, Heap und Stacks\n\n\nInterpreter-Loop emuliert eine Instruktion nach der anderen\n\n\nInstruction Pointer kann vor- oder zur\u00fcck springen (z.B. bei Branches)\n\n\n\n\nCall Stack\n\n\n\n\nStack von Activation Frames\n\n\nActivation Frame ist der \"Datenraum\" einer Methode\n\n\nIn jedem Activation Frame befindet sich ein Evaluation Stack\n\n\n\n\n\n\nBei uns gibt es nur einen Call-Stack (single-threaded)\n\n\nStatische Methoden bei uns gehen auf .NET Call-Stack\n\n\n\n\nMethod-Call\n\n\n\n\nNoch \u00fcberpr\u00fcfen, ob die Methode auch auf dem richtigen Objekt aufgerufen wird\n\n\n\n\nMethod Return\n\n\n\n\nR\u00fcckgabetyp pr\u00fcfen\n\n\nPr\u00fcfen, ob Stack leer ist nach Return", 
+            "title": "Virtual Machine"
+        }, 
+        {
+            "location": "/combau/virtual_machine/#virtual-machine", 
+            "text": "", 
+            "title": "Virtual Machine"
+        }, 
+        {
+            "location": "/combau/virtual_machine/#virtual-machine_1", 
+            "text": "Hypothetische Maschine, die die IL versteht  \"Virtueller Prozessor\" mit IL als Instruktionssatz  Bietet Mehrsprachigkeit, Multi Platform  Trennt Compiler von Laufzeit", 
+            "title": "Virtual Machine"
+        }, 
+        {
+            "location": "/combau/virtual_machine/#loader", 
+            "text": "L\u00e4dt IL in Speicher  Alloziert Speicher  Address Relocation  Adressen m\u00fcssen \"gefixt\" werden, weil Speicher nacheinander alloziert wird    Verifier: Statische Analyse des Codes  Initiiert Ausf\u00fchrung auf Interpreter / JIT  IL-Code wird direkt in Speicher geladen  Methodenaufrufe werden aufgel\u00f6st mit Deskriptoren (\"Fixup\")", 
+            "title": "Loader"
+        }, 
+        {
+            "location": "/combau/virtual_machine/#metadaten", 
+            "text": "Typ-Deskriptoren  \u00c4hnlich Symboltabelle  Beschreiben die Subtypen von Typen  z.B. Field types von Klassen", 
+            "title": "Metadaten"
+        }, 
+        {
+            "location": "/combau/virtual_machine/#interpreter", 
+            "text": "Interpretiert den IL-Code  Produziert Code f\u00fcr Hardware-Ausf\u00fchrung oder f\u00fcr JIT  Der Prozess wird unterst\u00fctzt von Metadaten, Heap und Stacks  Interpreter-Loop emuliert eine Instruktion nach der anderen  Instruction Pointer kann vor- oder zur\u00fcck springen (z.B. bei Branches)", 
+            "title": "Interpreter"
+        }, 
+        {
+            "location": "/combau/virtual_machine/#call-stack", 
+            "text": "Stack von Activation Frames  Activation Frame ist der \"Datenraum\" einer Methode  In jedem Activation Frame befindet sich ein Evaluation Stack    Bei uns gibt es nur einen Call-Stack (single-threaded)  Statische Methoden bei uns gehen auf .NET Call-Stack", 
+            "title": "Call Stack"
+        }, 
+        {
+            "location": "/combau/virtual_machine/#method-call", 
+            "text": "Noch \u00fcberpr\u00fcfen, ob die Methode auch auf dem richtigen Objekt aufgerufen wird", 
+            "title": "Method-Call"
+        }, 
+        {
+            "location": "/combau/virtual_machine/#method-return", 
+            "text": "R\u00fcckgabetyp pr\u00fcfen  Pr\u00fcfen, ob Stack leer ist nach Return", 
+            "title": "Method Return"
+        }, 
+        {
             "location": "/dl/", 
             "text": "Deep Learning", 
             "title": "Index"
@@ -489,6 +534,26 @@
             "location": "/dl/deep_feed-forward_networks/#chain-rule", 
             "text": "FF-Network is like a nested function (with each layer)  backprop is a dynamic algorithm that calculates the chain rule efficiently  Jacobian-matrix is diagonal if the function is element-wise  ReLU and sigmoid are", 
             "title": "Chain Rule"
+        }, 
+        {
+            "location": "/dl/regularization/", 
+            "text": "Regularization for Deep Learning\n\n\n\n\nGoal: Make the algorithm \"generalize\", e.g. that it will perform well on data it has never been trained with\n\n\nWe don't want to memorize the training data\n\n\n\n\nParameter Regularization\n\n\n\n\nTake e.g. the L2-Norm\n\n\nMultiply it with a hyperparameter \n\\alpha\n and add it to the cost function\n\n\nGoal: Weights should be small (weight decay)\n\n\nwith \n(1 - \\epsilon \\alpha)w\n, weights want to go towards zero\n\n\n\n\nIntuition: Small curvatures get pulled to zero, big curvatures don't get affected by the regularization\n\n\n\n\n\n\nL1-Regularization is a \"soft threshold\" that makes a lot of weights go to zero\n\n\n\n\nFewer values to calculate\n\n\n\n\n\n\n\n\nDataset Augmentation\n\n\n\n\nCreate artificial training data\n\n\ne.g. for picture classification: Just turn the image slightly, or zoom in / out, darken / brighten, etc.\n\n\nThe label stays the same, but we can multiply the training set\n\n\ni.e. a transformation that changes the input x, but not the output y\n\n\ninject noise to make the dataset more non-deterministic\n\n\nWe could also apply noise to the weights. Bayes philosophy that weights are just random variables with DFs, noise is a way to simulate that", 
+            "title": "Regularization"
+        }, 
+        {
+            "location": "/dl/regularization/#regularization-for-deep-learning", 
+            "text": "Goal: Make the algorithm \"generalize\", e.g. that it will perform well on data it has never been trained with  We don't want to memorize the training data", 
+            "title": "Regularization for Deep Learning"
+        }, 
+        {
+            "location": "/dl/regularization/#parameter-regularization", 
+            "text": "Take e.g. the L2-Norm  Multiply it with a hyperparameter  \\alpha  and add it to the cost function  Goal: Weights should be small (weight decay)  with  (1 - \\epsilon \\alpha)w , weights want to go towards zero   Intuition: Small curvatures get pulled to zero, big curvatures don't get affected by the regularization    L1-Regularization is a \"soft threshold\" that makes a lot of weights go to zero   Fewer values to calculate", 
+            "title": "Parameter Regularization"
+        }, 
+        {
+            "location": "/dl/regularization/#dataset-augmentation", 
+            "text": "Create artificial training data  e.g. for picture classification: Just turn the image slightly, or zoom in / out, darken / brighten, etc.  The label stays the same, but we can multiply the training set  i.e. a transformation that changes the input x, but not the output y  inject noise to make the dataset more non-deterministic  We could also apply noise to the weights. Bayes philosophy that weights are just random variables with DFs, noise is a way to simulate that", 
+            "title": "Dataset Augmentation"
         }
     ]
 }
