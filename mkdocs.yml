@@ -22,6 +22,9 @@ pages:
         - Semantische Analyse: 'combau/semantic_analysis.md'
         - Code Generierung: 'combau/code_generation.md'
         - Virtual Machine: 'combau/virtual_machine.md'
+        - Typ-Polymorphismus: 'combau/polymorphism.md'
+        - Garbage Collection: 'combau/garbage_collection.md'
+        - Just-in-Time Compiler: 'combau/jit.md'
     - Deep Learning:
         - Index: 'dl/index.md'
         - Linear Algebra: 'dl/linear_algebra.md'
