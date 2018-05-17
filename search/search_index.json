@@ -381,6 +381,136 @@
             "title": "Method Return"
         }, 
         {
+            "location": "/combau/polymorphism/", 
+            "text": "Typ-Polymorphismus\n\n\nReview letzte Woche\n\n\n\n\nType-Tag wird ben\u00f6tigt f\u00fcr Dynamic Dispatch (vtables), Garbage Collector, Interpreter (type safety), type tests/casts\n\n\n\n\nSingle Inheritance\n\n\n\n\nZur Einfachheit nur Einfachvererbung\n\n\n\n\nCode Reuse\n\n\n\n\nSubklassen erben transitiv die Felder und Methoden der Basisklasse\n\n\nMemory Layout: Fields der Basisklasse zuerst, damit der Field index bei Polymorphismus gleich bleibt\n\n\n\n\n\n\nHiding: Variablen in Subklasse \u00fcberdecken Variablen in Basisklasse\n\n\nWird statisch aufgel\u00f6st\n\n\n\n\n\n\n\n\nTyp-Polymorphismus\n\n\n\n\nSubtyp ist auf Basistyp zuweisungskompatibel\n\n\nTyp wird dynamisch bestimmt anhand des Type-Tags\n\n\nVererbung kann beliebig tief verschachtelt sein\n\n\nIneffizient, die ganze Vererbungskette durch zu loopen f\u00fcr einen Check\n\n\n\n\n\n\nEs braucht eine fixe Struktur, in der die Vererbungshierarchie abgebildet wird, um den Check in konstanter Zeit zu machen\n\n\n\n\nEffiziente Codierung Vererbung\n\n\n\n\nJeder Typ-Deskriptor hat eine Tabelle der Basistypen in verschiedenen Stufen\n\n\nDie letzte Stufe zeigt auf sich selbst\n\n\nDie Vererbungshierarchien sind fest zu Compile-Time, daher weiss man direkt, in welcher Stufe ein Basistyp sein muss\n\n\nUnn\u00f6tige Type-Casts k\u00f6nnen vom Compiler direkt aufgel\u00f6st werden\n\n\nType-Tests bei \nnull\n evaluiert zu \nfalse\n\n\nType-Cast von \nnull\n ist erfolgreich\n\n\n\n\nVirtuelle Methoden / Dynamic Dispatch\n\n\n\n\nBeim Typ-Deskriptor wird eine Virtual Table hinterlegt\n\n\nJeder Eintrag zeigt auf die konkrete Methode, entweder von sich selbst oder von einer Basisklasse\n\n\nKann vom Compiler aufgel\u00f6st werden (bzw. bei uns vom Loader)\n\n\nMethoden der Basisklasse zuerst in vtable, dann stimmt die Reihenfolge bei Dynamic Dispatch direkt", 
+            "title": "Typ-Polymorphismus"
+        }, 
+        {
+            "location": "/combau/polymorphism/#typ-polymorphismus", 
+            "text": "", 
+            "title": "Typ-Polymorphismus"
+        }, 
+        {
+            "location": "/combau/polymorphism/#review-letzte-woche", 
+            "text": "Type-Tag wird ben\u00f6tigt f\u00fcr Dynamic Dispatch (vtables), Garbage Collector, Interpreter (type safety), type tests/casts", 
+            "title": "Review letzte Woche"
+        }, 
+        {
+            "location": "/combau/polymorphism/#single-inheritance", 
+            "text": "Zur Einfachheit nur Einfachvererbung", 
+            "title": "Single Inheritance"
+        }, 
+        {
+            "location": "/combau/polymorphism/#code-reuse", 
+            "text": "Subklassen erben transitiv die Felder und Methoden der Basisklasse  Memory Layout: Fields der Basisklasse zuerst, damit der Field index bei Polymorphismus gleich bleibt    Hiding: Variablen in Subklasse \u00fcberdecken Variablen in Basisklasse  Wird statisch aufgel\u00f6st", 
+            "title": "Code Reuse"
+        }, 
+        {
+            "location": "/combau/polymorphism/#typ-polymorphismus_1", 
+            "text": "Subtyp ist auf Basistyp zuweisungskompatibel  Typ wird dynamisch bestimmt anhand des Type-Tags  Vererbung kann beliebig tief verschachtelt sein  Ineffizient, die ganze Vererbungskette durch zu loopen f\u00fcr einen Check    Es braucht eine fixe Struktur, in der die Vererbungshierarchie abgebildet wird, um den Check in konstanter Zeit zu machen", 
+            "title": "Typ-Polymorphismus"
+        }, 
+        {
+            "location": "/combau/polymorphism/#effiziente-codierung-vererbung", 
+            "text": "Jeder Typ-Deskriptor hat eine Tabelle der Basistypen in verschiedenen Stufen  Die letzte Stufe zeigt auf sich selbst  Die Vererbungshierarchien sind fest zu Compile-Time, daher weiss man direkt, in welcher Stufe ein Basistyp sein muss  Unn\u00f6tige Type-Casts k\u00f6nnen vom Compiler direkt aufgel\u00f6st werden  Type-Tests bei  null  evaluiert zu  false  Type-Cast von  null  ist erfolgreich", 
+            "title": "Effiziente Codierung Vererbung"
+        }, 
+        {
+            "location": "/combau/polymorphism/#virtuelle-methoden-dynamic-dispatch", 
+            "text": "Beim Typ-Deskriptor wird eine Virtual Table hinterlegt  Jeder Eintrag zeigt auf die konkrete Methode, entweder von sich selbst oder von einer Basisklasse  Kann vom Compiler aufgel\u00f6st werden (bzw. bei uns vom Loader)  Methoden der Basisklasse zuerst in vtable, dann stimmt die Reihenfolge bei Dynamic Dispatch direkt", 
+            "title": "Virtuelle Methoden / Dynamic Dispatch"
+        }, 
+        {
+            "location": "/combau/garbage_collection/", 
+            "text": "Garbage Collection\n\n\nMemory Safety\n\n\n\n\nBei uns werden Metadaten vom .NET-GC abger\u00e4umt\n\n\nGC wird z.B. bei Webserver ben\u00f6tigt, wenn immer neue Objekte alloziert werden\n\n\nExplizite Freigabe (mit \ndelete\n) f\u00fchrt zu Dangling Pointers (zu fr\u00fche Freigabe) und Memory Leaks (zu sp\u00e4te / keine Freigabe)\n\n\n\n\nGarbage Collection\n\n\n\n\nLaufzeitsystem k\u00fcmmert sich um die Freigabe\n\n\nEs gibt mehrere Techniken dazu\n\n\nGarbage = Objekte, die \nnicht mehr erreichbar sind\n und daher nicht mehr gebraucht werden\n\n\n\n\nReference Counting\n\n\n\n\nNaive Variante von GC\n\n\nz.B. von Objective C implementiert, bei C++ shared pointers\n\n\nIdee: Eingehende Referenzen von einem Objekt z\u00e4hlen\n\n\nWenn die Zahl = 0 -\n Ist Garbage\n\n\nBei Zyklischen Abh\u00e4ngigkeiten ist Garbage = Reference Count 0 nicht gegeben\n\n\n\n\n\n\nUpdates sind teuer\n\n\nDie Reference Counts sind \"shared resources\", d.h. sie m\u00fcssen atomar geschrieben werden\n\n\n\n\n\n\nZyklische Strukturen werden nie zu Garbage, da sie sich immer gegenseitig (bzw. zyklisch) referenzieren\n\n\n= Memory Leak\n\n\nViele Strukturen sind zyklisch\n\n\nWird z.B. bei C++ mit \nweak_pointer\n gel\u00f6st\n\n\n\n\n\n\nVorteil: Deallokation ist deterministisch bei letzter Dereferenzierung\n\n\n\n\nGarbage Collector\n\n\n\n\nHeap wird analysiert und Garbage freigegeben\n\n\nHeap ist ein flacher Graph\n\n\nL\u00e4uft nicht-deterministisch\n\n\nGarbage sind Nodes im Graph, die vom \"Programm\" nicht mehr erreichbar sind\n\n\nLaufendes Programm ist \"Root-Set\"\n\n\nRoot-Set besteht aus allen Referenzen im aktiven Frame auf dem Call Stack\n\n\n\n\nMark \n Sweep\n\n\n\n\nMarkiere alle transitiven erreichbaren Objekte\n\n\nSweep: L\u00f6sche alle nicht markierte Objekte\n\n\nMit Tiefensuche alle Objekte von einem Root-Objekt aus traversieren\n\n\nProblem: GC kann bei tiefer Struktur selbst viel Speicher ben\u00f6tigen\n\n\nSweep: Linearer Scan \u00fcber alle Bl\u00f6cke im Heap\n\n\nNach dem Sweep die Markierung wieder resetten\n\n\n\n\n\n\nNun gibt es L\u00fccken im Speicher (Fragmentierung)\n\n\nFree list f\u00fchren mit freien Speicherbl\u00f6cken\n\n\nN\u00e4chstes mal: Objekte verschieben\n\n\n\n\n\n\n\n\nDetailaspekte\n\n\n\n\nProgramm darf eigentlich nicht laufen w\u00e4hrend dem Mark\n\n\nTechniken f\u00fcr Concurrent GC, um keine \u00c4nderungen w\u00e4hrend dem Mark zu verpassen\n\n\n\n\n\n\nAusf\u00fchrungszeitpunkt\n\n\nSp\u00e4testens, wenn der Heap voll sind\n\n\nOder prophylaktisch fr\u00fcher\n\n\n\n\n\n\nUnser GC l\u00e4uft sequentiell und exklusiv (nicht async), Programm ist unterbrochen\n\n\nRoot Set wird momentan vereinfacht auf das Main-Objekt\n\n\n\n\nWoche 2 - Vertiefung\n\n\nStack Root Set\n\n\n\n\nErkenne Referenzen auf dem Call Stack\n\n\nActivation Frame durchscanne\n\n\n\n\n\n\nLokale Variablen, Parameter (auch \nthis\n pointer)\n\n\nGC kann auch w\u00e4hrend einer Auswertung laufen, d.h. Pointer im Evaluation Stack beachten!\n\n\n\n\nFinalizer\n\n\n\n\n\u00dcblicherweise kommen Objekte nur einmal in die Finalizer-Liste, d.h. sie k\u00f6nnen sich h\u00f6chstens 1 Mal \"resurrecten\"\n\n\n\n\nWeak References\n\n\n\n\nNicht im Sinne von z.B. C++ Weak References, sondern f\u00fcr einen \"richtigen\" GC, d.h. Zyklen sind kein Problem", 
+            "title": "Garbage Collection"
+        }, 
+        {
+            "location": "/combau/garbage_collection/#garbage-collection", 
+            "text": "", 
+            "title": "Garbage Collection"
+        }, 
+        {
+            "location": "/combau/garbage_collection/#memory-safety", 
+            "text": "Bei uns werden Metadaten vom .NET-GC abger\u00e4umt  GC wird z.B. bei Webserver ben\u00f6tigt, wenn immer neue Objekte alloziert werden  Explizite Freigabe (mit  delete ) f\u00fchrt zu Dangling Pointers (zu fr\u00fche Freigabe) und Memory Leaks (zu sp\u00e4te / keine Freigabe)", 
+            "title": "Memory Safety"
+        }, 
+        {
+            "location": "/combau/garbage_collection/#garbage-collection_1", 
+            "text": "Laufzeitsystem k\u00fcmmert sich um die Freigabe  Es gibt mehrere Techniken dazu  Garbage = Objekte, die  nicht mehr erreichbar sind  und daher nicht mehr gebraucht werden", 
+            "title": "Garbage Collection"
+        }, 
+        {
+            "location": "/combau/garbage_collection/#reference-counting", 
+            "text": "Naive Variante von GC  z.B. von Objective C implementiert, bei C++ shared pointers  Idee: Eingehende Referenzen von einem Objekt z\u00e4hlen  Wenn die Zahl = 0 -  Ist Garbage  Bei Zyklischen Abh\u00e4ngigkeiten ist Garbage = Reference Count 0 nicht gegeben    Updates sind teuer  Die Reference Counts sind \"shared resources\", d.h. sie m\u00fcssen atomar geschrieben werden    Zyklische Strukturen werden nie zu Garbage, da sie sich immer gegenseitig (bzw. zyklisch) referenzieren  = Memory Leak  Viele Strukturen sind zyklisch  Wird z.B. bei C++ mit  weak_pointer  gel\u00f6st    Vorteil: Deallokation ist deterministisch bei letzter Dereferenzierung", 
+            "title": "Reference Counting"
+        }, 
+        {
+            "location": "/combau/garbage_collection/#garbage-collector", 
+            "text": "Heap wird analysiert und Garbage freigegeben  Heap ist ein flacher Graph  L\u00e4uft nicht-deterministisch  Garbage sind Nodes im Graph, die vom \"Programm\" nicht mehr erreichbar sind  Laufendes Programm ist \"Root-Set\"  Root-Set besteht aus allen Referenzen im aktiven Frame auf dem Call Stack", 
+            "title": "Garbage Collector"
+        }, 
+        {
+            "location": "/combau/garbage_collection/#mark-sweep", 
+            "text": "Markiere alle transitiven erreichbaren Objekte  Sweep: L\u00f6sche alle nicht markierte Objekte  Mit Tiefensuche alle Objekte von einem Root-Objekt aus traversieren  Problem: GC kann bei tiefer Struktur selbst viel Speicher ben\u00f6tigen  Sweep: Linearer Scan \u00fcber alle Bl\u00f6cke im Heap  Nach dem Sweep die Markierung wieder resetten    Nun gibt es L\u00fccken im Speicher (Fragmentierung)  Free list f\u00fchren mit freien Speicherbl\u00f6cken  N\u00e4chstes mal: Objekte verschieben", 
+            "title": "Mark &amp; Sweep"
+        }, 
+        {
+            "location": "/combau/garbage_collection/#detailaspekte", 
+            "text": "Programm darf eigentlich nicht laufen w\u00e4hrend dem Mark  Techniken f\u00fcr Concurrent GC, um keine \u00c4nderungen w\u00e4hrend dem Mark zu verpassen    Ausf\u00fchrungszeitpunkt  Sp\u00e4testens, wenn der Heap voll sind  Oder prophylaktisch fr\u00fcher    Unser GC l\u00e4uft sequentiell und exklusiv (nicht async), Programm ist unterbrochen  Root Set wird momentan vereinfacht auf das Main-Objekt", 
+            "title": "Detailaspekte"
+        }, 
+        {
+            "location": "/combau/garbage_collection/#woche-2-vertiefung", 
+            "text": "", 
+            "title": "Woche 2 - Vertiefung"
+        }, 
+        {
+            "location": "/combau/garbage_collection/#stack-root-set", 
+            "text": "Erkenne Referenzen auf dem Call Stack  Activation Frame durchscanne    Lokale Variablen, Parameter (auch  this  pointer)  GC kann auch w\u00e4hrend einer Auswertung laufen, d.h. Pointer im Evaluation Stack beachten!", 
+            "title": "Stack Root Set"
+        }, 
+        {
+            "location": "/combau/garbage_collection/#finalizer", 
+            "text": "\u00dcblicherweise kommen Objekte nur einmal in die Finalizer-Liste, d.h. sie k\u00f6nnen sich h\u00f6chstens 1 Mal \"resurrecten\"", 
+            "title": "Finalizer"
+        }, 
+        {
+            "location": "/combau/garbage_collection/#weak-references", 
+            "text": "Nicht im Sinne von z.B. C++ Weak References, sondern f\u00fcr einen \"richtigen\" GC, d.h. Zyklen sind kein Problem", 
+            "title": "Weak References"
+        }, 
+        {
+            "location": "/combau/jit/", 
+            "text": "Just-In-Time Compiler\n\n\n\n\nAusf\u00fchrung direkt auf Hardware (Intel 64) statt auf .NET Runtime\n\n\nnur kritische Teile, die oft ausgef\u00fchrt werden\n\n\nProfiling: Analyse zur Laufzeit, wie viel Codeausschnitte ausgef\u00fchrt werde, um \"Hot Spots\" zu finden\n\n\nAuf ebene Branches analysieren / z\u00e4hlen\n\n\n\n\n\n\n\n\nIntel 64 Architektur\n\n\n\n\nBenutzt Register (statt Stack)\n\n\n8[RCX]\n: Lies von Adresse \nRCX + 8\n (Von Memory in Register laden)\n\n\nSigned und Unsigned Integer Addition / Subtraktion sind die gleichen (wegen 2er Komplement)\n\n\nDivision und Modulo mit \nIDIV\n\n\nBei jeder Division wird von \nRAX\n als Dividend gelesen\n\n\nRDX\n muss 0 sein\n\n\nDas Argument ist der Divisor\n\n\nRAX = RAX / Argument\n\n\nRDX = RAX \n Argument\n\n\n\n\n\n\n\n\nCode Generation\n\n\n\n\nTemplate-based: Codemuster aus IL erkennen (z.B. f\u00fcr jede Instruktion) und daraus Intel64-Code generieren\n\n\n\n\nRegister Allocation\n\n\n\n\nIn den \"Templates\" muss man wissen, in welchen Register was liegt und in welche was geschrieben werden soll\n\n\nDazu ein Register-Stack f\u00fchren, der wie Evaluation-Stack verl\u00e4uft\n\n\nStatt beim Eval-Stack die Werte selbst, wird im Register-Stack geschrieben, in welchen Registern die Werte liegen\n\n\nBei Division braucht es das \nRDX\n-Register, und im \nRAX\n muss der Dividend stehen\n\n\nRAX\n und \nRDX\n tempor\u00e4r in freie Register kopieren\n\n\n\n\n\n\n\n\nBranches\n\n\n\n\nBei conditional jumps immer zuerst \nCMP\n, dann \nJE\n, \nJNE\n usw.", 
+            "title": "Just-in-Time Compiler"
+        }, 
+        {
+            "location": "/combau/jit/#just-in-time-compiler", 
+            "text": "Ausf\u00fchrung direkt auf Hardware (Intel 64) statt auf .NET Runtime  nur kritische Teile, die oft ausgef\u00fchrt werden  Profiling: Analyse zur Laufzeit, wie viel Codeausschnitte ausgef\u00fchrt werde, um \"Hot Spots\" zu finden  Auf ebene Branches analysieren / z\u00e4hlen", 
+            "title": "Just-In-Time Compiler"
+        }, 
+        {
+            "location": "/combau/jit/#intel-64-architektur", 
+            "text": "Benutzt Register (statt Stack)  8[RCX] : Lies von Adresse  RCX + 8  (Von Memory in Register laden)  Signed und Unsigned Integer Addition / Subtraktion sind die gleichen (wegen 2er Komplement)  Division und Modulo mit  IDIV  Bei jeder Division wird von  RAX  als Dividend gelesen  RDX  muss 0 sein  Das Argument ist der Divisor  RAX = RAX / Argument  RDX = RAX   Argument", 
+            "title": "Intel 64 Architektur"
+        }, 
+        {
+            "location": "/combau/jit/#code-generation", 
+            "text": "Template-based: Codemuster aus IL erkennen (z.B. f\u00fcr jede Instruktion) und daraus Intel64-Code generieren", 
+            "title": "Code Generation"
+        }, 
+        {
+            "location": "/combau/jit/#register-allocation", 
+            "text": "In den \"Templates\" muss man wissen, in welchen Register was liegt und in welche was geschrieben werden soll  Dazu ein Register-Stack f\u00fchren, der wie Evaluation-Stack verl\u00e4uft  Statt beim Eval-Stack die Werte selbst, wird im Register-Stack geschrieben, in welchen Registern die Werte liegen  Bei Division braucht es das  RDX -Register, und im  RAX  muss der Dividend stehen  RAX  und  RDX  tempor\u00e4r in freie Register kopieren", 
+            "title": "Register Allocation"
+        }, 
+        {
+            "location": "/combau/jit/#branches", 
+            "text": "Bei conditional jumps immer zuerst  CMP , dann  JE ,  JNE  usw.", 
+            "title": "Branches"
+        }, 
+        {
             "location": "/dl/", 
             "text": "Deep Learning", 
             "title": "Index"
