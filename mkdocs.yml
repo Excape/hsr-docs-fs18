@@ -25,6 +25,7 @@ pages:
         - Typ-Polymorphismus: 'combau/polymorphism.md'
         - Garbage Collection: 'combau/garbage_collection.md'
         - Just-in-Time Compiler: 'combau/jit.md'
+        - Abschluss: 'combau/abschluss.md'
     - Deep Learning:
         - Index: 'dl/index.md'
         - Linear Algebra: 'dl/linear_algebra.md'
