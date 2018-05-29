@@ -511,6 +511,46 @@
             "title": "Branches"
         }, 
         {
+            "location": "/combau/abschluss/", 
+            "text": "Abschluss\n\n\nOffene Themen\n\n\nStatische Code-Analyse\n\n\n\n\nBeispiel: Lesen uninitialisierter Variablen\n\n\nc\n ist sicher nicht initialisiert, \nb\n abh\u00e4ngig vom \nif\n\n\nEvtl. ist aber die \nif\n-Bedingung immer gegeben. Problem ist nicht absolut entscheidbar\n\n\n\n\n\n\nKonservativ behandeln: Programmpfade analysieren, die m\u00f6glich sind\n\n\nN\u00e4chstes Beispiel: \nc\n ist sicher \n= 3\n\n\nWieder Pfade anschauen. Wenn eine Variable auf allen Pfaden den gleichen Wert hat, ist dieser Konstant -\n optimierbar\n\n\nMit \nwhile\n ist \nc\n nicht mehr konstant\n\n\nPfad schliesst sich wieder, es muss durchiteriert werden, bis keine \u00c4nderungen mehr passieren\n\n\n\n\nSingle Static Assignment\n\n\n\n\nBei Wiederverwendung von Variablen\n\n\nOptimierung: Jede Variable wird genau einmal zugewiesen (Variablen \"indexieren\")\n\n\nProblematisch bei Verzweigungen\n\n\nDie \n\\phi\n-Funktion entscheidet, welcher Pfad genommen wird\n\n\nWenn einmal SSA durchgef\u00fchrt ist, kann man einfach \"Dead Code\" erkennen, wenn Variablen nie gelesen werden\n\n\n\n\nCommon Subexpression Elimination\n\n\n\n\nWiederholt ausgewertete Teilausdr\u00fccke identifizieren\n\n\nDiese in eine temp-Variable / oder besser Register vorberechnen\n\n\nBasiert ebenfalls auf SSA\n\n\n\n\nPartial Redundancy Elimination\n\n\n\n\nDoppelter / Redundanter Code erkennen\n\n\nIn allen Codepfaden den Code duplizieren, in allen F\u00e4llen wird dann der Ausdruck nur einmal ausgewertet\n\n\n\n\nPeephole Optimization\n\n\n\n\nEin \"Fenster\" von z.B. 3 Instruktion \u00fcber den IL-Code laufen lassen\n\n\nOptimierungen innerhalb dieses \"Gucklochs\"\n\n\nKonstante Expressions k\u00f6nnen so direkt ausgewertet werten\n\n\nLaufzeit ist voraussehbar anhand der Gr\u00f6sse des Peepholes", 
+            "title": "Abschluss"
+        }, 
+        {
+            "location": "/combau/abschluss/#abschluss", 
+            "text": "", 
+            "title": "Abschluss"
+        }, 
+        {
+            "location": "/combau/abschluss/#offene-themen", 
+            "text": "", 
+            "title": "Offene Themen"
+        }, 
+        {
+            "location": "/combau/abschluss/#statische-code-analyse", 
+            "text": "Beispiel: Lesen uninitialisierter Variablen  c  ist sicher nicht initialisiert,  b  abh\u00e4ngig vom  if  Evtl. ist aber die  if -Bedingung immer gegeben. Problem ist nicht absolut entscheidbar    Konservativ behandeln: Programmpfade analysieren, die m\u00f6glich sind  N\u00e4chstes Beispiel:  c  ist sicher  = 3  Wieder Pfade anschauen. Wenn eine Variable auf allen Pfaden den gleichen Wert hat, ist dieser Konstant -  optimierbar  Mit  while  ist  c  nicht mehr konstant  Pfad schliesst sich wieder, es muss durchiteriert werden, bis keine \u00c4nderungen mehr passieren", 
+            "title": "Statische Code-Analyse"
+        }, 
+        {
+            "location": "/combau/abschluss/#single-static-assignment", 
+            "text": "Bei Wiederverwendung von Variablen  Optimierung: Jede Variable wird genau einmal zugewiesen (Variablen \"indexieren\")  Problematisch bei Verzweigungen  Die  \\phi -Funktion entscheidet, welcher Pfad genommen wird  Wenn einmal SSA durchgef\u00fchrt ist, kann man einfach \"Dead Code\" erkennen, wenn Variablen nie gelesen werden", 
+            "title": "Single Static Assignment"
+        }, 
+        {
+            "location": "/combau/abschluss/#common-subexpression-elimination", 
+            "text": "Wiederholt ausgewertete Teilausdr\u00fccke identifizieren  Diese in eine temp-Variable / oder besser Register vorberechnen  Basiert ebenfalls auf SSA", 
+            "title": "Common Subexpression Elimination"
+        }, 
+        {
+            "location": "/combau/abschluss/#partial-redundancy-elimination", 
+            "text": "Doppelter / Redundanter Code erkennen  In allen Codepfaden den Code duplizieren, in allen F\u00e4llen wird dann der Ausdruck nur einmal ausgewertet", 
+            "title": "Partial Redundancy Elimination"
+        }, 
+        {
+            "location": "/combau/abschluss/#peephole-optimization", 
+            "text": "Ein \"Fenster\" von z.B. 3 Instruktion \u00fcber den IL-Code laufen lassen  Optimierungen innerhalb dieses \"Gucklochs\"  Konstante Expressions k\u00f6nnen so direkt ausgewertet werten  Laufzeit ist voraussehbar anhand der Gr\u00f6sse des Peepholes", 
+            "title": "Peephole Optimization"
+        }, 
+        {
             "location": "/dl/", 
             "text": "Deep Learning", 
             "title": "Index"

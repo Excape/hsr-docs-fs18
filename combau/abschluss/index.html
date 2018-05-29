@@ -13,7 +13,7 @@
         <meta name="description" content="HSR Study Documentation FS18">
       
       
-        <link rel="canonical" href="https://doc.robinsuter.ch/combau/garbage_collection/">
+        <link rel="canonical" href="https://doc.robinsuter.ch/combau/abschluss/">
       
       
         <meta name="author" content="Robin Suter">
@@ -42,7 +42,7 @@
     
     
       
-        <title>Garbage Collection - HSR Notizen FS18</title>
+        <title>Abschluss - HSR Notizen FS18</title>
       
     
     
@@ -97,7 +97,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
     
-      <a href="#garbage-collection" tabindex="1" class="md-skip">
+      <a href="#abschluss" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -123,7 +123,7 @@
                 HSR Notizen FS18
               </span>
               <span class="md-header-nav__topic">
-                Garbage Collection
+                Abschluss
               </span>
             
           
@@ -439,124 +439,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="toc">
-        Garbage Collection
-      </label>
-    
-    <a href="./" title="Garbage Collection" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../garbage_collection/" title="Garbage Collection" class="md-nav__link">
       Garbage Collection
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#memory-safety" title="Memory Safety" class="md-nav__link">
-    Memory Safety
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#garbage-collection_1" title="Garbage Collection" class="md-nav__link">
-    Garbage Collection
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#reference-counting" title="Reference Counting" class="md-nav__link">
-    Reference Counting
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#garbage-collector" title="Garbage Collector" class="md-nav__link">
-    Garbage Collector
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#mark-sweep" title="Mark &amp; Sweep" class="md-nav__link">
-    Mark &amp; Sweep
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#detailaspekte" title="Detailaspekte" class="md-nav__link">
-    Detailaspekte
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#woche-2-vertiefung" title="Woche 2 - Vertiefung" class="md-nav__link">
-    Woche 2 - Vertiefung
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#stack-root-set" title="Stack Root Set" class="md-nav__link">
-    Stack Root Set
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#finalizer" title="Finalizer" class="md-nav__link">
-    Finalizer
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#weak-references" title="Weak References" class="md-nav__link">
-    Weak References
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -576,11 +463,90 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../abschluss/" title="Abschluss" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        Abschluss
+      </label>
+    
+    <a href="./" title="Abschluss" class="md-nav__link md-nav__link--active">
       Abschluss
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#offene-themen" title="Offene Themen" class="md-nav__link">
+    Offene Themen
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#statische-code-analyse" title="Statische Code-Analyse" class="md-nav__link">
+    Statische Code-Analyse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#single-static-assignment" title="Single Static Assignment" class="md-nav__link">
+    Single Static Assignment
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#common-subexpression-elimination" title="Common Subexpression Elimination" class="md-nav__link">
+    Common Subexpression Elimination
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#partial-redundancy-elimination" title="Partial Redundancy Elimination" class="md-nav__link">
+    Partial Redundancy Elimination
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#peephole-optimization" title="Peephole Optimization" class="md-nav__link">
+    Peephole Optimization
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -706,84 +672,50 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#memory-safety" title="Memory Safety" class="md-nav__link">
-    Memory Safety
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#garbage-collection_1" title="Garbage Collection" class="md-nav__link">
-    Garbage Collection
+  <a href="#offene-themen" title="Offene Themen" class="md-nav__link">
+    Offene Themen
   </a>
   
     <nav class="md-nav">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#reference-counting" title="Reference Counting" class="md-nav__link">
-    Reference Counting
+  <a href="#statische-code-analyse" title="Statische Code-Analyse" class="md-nav__link">
+    Statische Code-Analyse
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#garbage-collector" title="Garbage Collector" class="md-nav__link">
-    Garbage Collector
+  <a href="#single-static-assignment" title="Single Static Assignment" class="md-nav__link">
+    Single Static Assignment
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#mark-sweep" title="Mark &amp; Sweep" class="md-nav__link">
-    Mark &amp; Sweep
+  <a href="#common-subexpression-elimination" title="Common Subexpression Elimination" class="md-nav__link">
+    Common Subexpression Elimination
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#detailaspekte" title="Detailaspekte" class="md-nav__link">
-    Detailaspekte
+  <a href="#partial-redundancy-elimination" title="Partial Redundancy Elimination" class="md-nav__link">
+    Partial Redundancy Elimination
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#peephole-optimization" title="Peephole Optimization" class="md-nav__link">
+    Peephole Optimization
   </a>
   
 </li>
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#woche-2-vertiefung" title="Woche 2 - Vertiefung" class="md-nav__link">
-    Woche 2 - Vertiefung
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#stack-root-set" title="Stack Root Set" class="md-nav__link">
-    Stack Root Set
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#finalizer" title="Finalizer" class="md-nav__link">
-    Finalizer
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#weak-references" title="Weak References" class="md-nav__link">
-    Weak References
-  </a>
   
 </li>
       
@@ -803,99 +735,49 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/Excape/hsr-docs-fs18/edit/master/docs/combau/garbage_collection.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/Excape/hsr-docs-fs18/edit/master/docs/combau/abschluss.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="garbage-collection">Garbage Collection<a class="headerlink" href="#garbage-collection" title="Permanent link">&para;</a></h1>
-<h2 id="memory-safety">Memory Safety<a class="headerlink" href="#memory-safety" title="Permanent link">&para;</a></h2>
+                <h1 id="abschluss">Abschluss<a class="headerlink" href="#abschluss" title="Permanent link">&para;</a></h1>
+<h2 id="offene-themen">Offene Themen<a class="headerlink" href="#offene-themen" title="Permanent link">&para;</a></h2>
+<h3 id="statische-code-analyse">Statische Code-Analyse<a class="headerlink" href="#statische-code-analyse" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Bei uns werden Metadaten vom .NET-GC abgeräumt</li>
-<li>GC wird z.B. bei Webserver benötigt, wenn immer neue Objekte alloziert werden</li>
-<li>Explizite Freigabe (mit <code>delete</code>) führt zu Dangling Pointers (zu frühe Freigabe) und Memory Leaks (zu späte / keine Freigabe)</li>
-</ul>
-<h2 id="garbage-collection_1">Garbage Collection<a class="headerlink" href="#garbage-collection_1" title="Permanent link">&para;</a></h2>
-<ul>
-<li>Laufzeitsystem kümmert sich um die Freigabe</li>
-<li>Es gibt mehrere Techniken dazu</li>
-<li>Garbage = Objekte, die <em>nicht mehr erreichbar sind</em> und daher nicht mehr gebraucht werden</li>
-</ul>
-<h3 id="reference-counting">Reference Counting<a class="headerlink" href="#reference-counting" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Naive Variante von GC</li>
-<li>z.B. von Objective C implementiert, bei C++ shared pointers</li>
-<li>Idee: Eingehende Referenzen von einem Objekt zählen<ul>
-<li>Wenn die Zahl = 0 -&gt; Ist Garbage</li>
-<li>Bei Zyklischen Abhängigkeiten ist Garbage = Reference Count 0 nicht gegeben</li>
+<li>Beispiel: Lesen uninitialisierter Variablen<ul>
+<li><code>c</code> ist sicher nicht initialisiert, <code>b</code> abhängig vom <code>if</code></li>
+<li>Evtl. ist aber die <code>if</code>-Bedingung immer gegeben. Problem ist nicht absolut entscheidbar</li>
 </ul>
 </li>
-<li>Updates sind teuer<ul>
-<li>Die Reference Counts sind "shared resources", d.h. sie müssen atomar geschrieben werden</li>
+<li>Konservativ behandeln: Programmpfade analysieren, die möglich sind</li>
+<li>Nächstes Beispiel: <code>c</code> ist sicher <code>= 3</code></li>
+<li>Wieder Pfade anschauen. Wenn eine Variable auf allen Pfaden den gleichen Wert hat, ist dieser Konstant -&gt; optimierbar</li>
+<li>Mit <code>while</code> ist <code>c</code> nicht mehr konstant</li>
+<li>Pfad schliesst sich wieder, es muss durchiteriert werden, bis keine Änderungen mehr passieren</li>
 </ul>
-</li>
-<li>Zyklische Strukturen werden nie zu Garbage, da sie sich immer gegenseitig (bzw. zyklisch) referenzieren<ul>
-<li>= Memory Leak</li>
-<li>Viele Strukturen sind zyklisch</li>
-<li>Wird z.B. bei C++ mit <code>weak_pointer</code> gelöst</li>
-</ul>
-</li>
-<li>Vorteil: Deallokation ist deterministisch bei letzter Dereferenzierung</li>
-</ul>
-<h3 id="garbage-collector">Garbage Collector<a class="headerlink" href="#garbage-collector" title="Permanent link">&para;</a></h3>
+<h3 id="single-static-assignment">Single Static Assignment<a class="headerlink" href="#single-static-assignment" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Heap wird analysiert und Garbage freigegeben</li>
-<li>Heap ist ein flacher Graph</li>
-<li>Läuft nicht-deterministisch</li>
-<li>Garbage sind Nodes im Graph, die vom "Programm" nicht mehr erreichbar sind</li>
-<li>Laufendes Programm ist "Root-Set"</li>
-<li>Root-Set besteht aus allen Referenzen im aktiven Frame auf dem Call Stack</li>
+<li>Bei Wiederverwendung von Variablen</li>
+<li>Optimierung: Jede Variable wird genau einmal zugewiesen (Variablen "indexieren")</li>
+<li>Problematisch bei Verzweigungen</li>
+<li>Die <script type="math/tex">\phi</script>-Funktion entscheidet, welcher Pfad genommen wird</li>
+<li>Wenn einmal SSA durchgeführt ist, kann man einfach "Dead Code" erkennen, wenn Variablen nie gelesen werden</li>
 </ul>
-<h3 id="mark-sweep">Mark &amp; Sweep<a class="headerlink" href="#mark-sweep" title="Permanent link">&para;</a></h3>
+<h3 id="common-subexpression-elimination">Common Subexpression Elimination<a class="headerlink" href="#common-subexpression-elimination" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Markiere alle transitiven erreichbaren Objekte</li>
-<li>Sweep: Lösche alle nicht markierte Objekte</li>
-<li>Mit Tiefensuche alle Objekte von einem Root-Objekt aus traversieren</li>
-<li>Problem: GC kann bei tiefer Struktur selbst viel Speicher benötigen</li>
-<li>Sweep: Linearer Scan über alle Blöcke im Heap<ul>
-<li>Nach dem Sweep die Markierung wieder resetten</li>
+<li>Wiederholt ausgewertete Teilausdrücke identifizieren</li>
+<li>Diese in eine temp-Variable / oder besser Register vorberechnen</li>
+<li>Basiert ebenfalls auf SSA</li>
 </ul>
-</li>
-<li>Nun gibt es Lücken im Speicher (Fragmentierung)<ul>
-<li>Free list führen mit freien Speicherblöcken</li>
-<li>Nächstes mal: Objekte verschieben</li>
-</ul>
-</li>
-</ul>
-<h3 id="detailaspekte">Detailaspekte<a class="headerlink" href="#detailaspekte" title="Permanent link">&para;</a></h3>
+<h3 id="partial-redundancy-elimination">Partial Redundancy Elimination<a class="headerlink" href="#partial-redundancy-elimination" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Programm darf eigentlich nicht laufen während dem Mark<ul>
-<li>Techniken für Concurrent GC, um keine Änderungen während dem Mark zu verpassen</li>
+<li>Doppelter / Redundanter Code erkennen</li>
+<li>In allen Codepfaden den Code duplizieren, in allen Fällen wird dann der Ausdruck nur einmal ausgewertet</li>
 </ul>
-</li>
-<li>Ausführungszeitpunkt<ul>
-<li>Spätestens, wenn der Heap voll sind</li>
-<li>Oder prophylaktisch früher</li>
-</ul>
-</li>
-<li>Unser GC läuft sequentiell und exklusiv (nicht async), Programm ist unterbrochen</li>
-<li>Root Set wird momentan vereinfacht auf das Main-Objekt</li>
-</ul>
-<h2 id="woche-2-vertiefung">Woche 2 - Vertiefung<a class="headerlink" href="#woche-2-vertiefung" title="Permanent link">&para;</a></h2>
-<h3 id="stack-root-set">Stack Root Set<a class="headerlink" href="#stack-root-set" title="Permanent link">&para;</a></h3>
+<h3 id="peephole-optimization">Peephole Optimization<a class="headerlink" href="#peephole-optimization" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Erkenne Referenzen auf dem Call Stack<ul>
-<li>Activation Frame durchscanne</li>
-</ul>
-</li>
-<li>Lokale Variablen, Parameter (auch <code>this</code> pointer)</li>
-<li>GC kann auch während einer Auswertung laufen, d.h. Pointer im Evaluation Stack beachten!</li>
-</ul>
-<h2 id="finalizer">Finalizer<a class="headerlink" href="#finalizer" title="Permanent link">&para;</a></h2>
-<ul>
-<li>Üblicherweise kommen Objekte nur einmal in die Finalizer-Liste, d.h. sie können sich höchstens 1 Mal "resurrecten"</li>
-</ul>
-<h2 id="weak-references">Weak References<a class="headerlink" href="#weak-references" title="Permanent link">&para;</a></h2>
-<ul>
-<li>Nicht im Sinne von z.B. C++ Weak References, sondern für einen "richtigen" GC, d.h. Zyklen sind kein Problem</li>
+<li>Ein "Fenster" von z.B. 3 Instruktion über den IL-Code laufen lassen</li>
+<li>Optimierungen innerhalb dieses "Gucklochs"</li>
+<li>Konstante Expressions können so direkt ausgewertet werten</li>
+<li>Laufzeit ist voraussehbar anhand der Grösse des Peepholes</li>
 </ul>
                 
                   
@@ -917,7 +799,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../polymorphism/" title="Typ-Polymorphismus" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../jit/" title="Just-in-Time Compiler" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -926,19 +808,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Typ-Polymorphismus
+                Just-in-Time Compiler
               </span>
             </div>
           </a>
         
         
-          <a href="../jit/" title="Just-in-Time Compiler" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../../dl/" title="Index" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Just-in-Time Compiler
+                Index
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
